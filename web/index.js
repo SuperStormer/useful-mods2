@@ -1,5 +1,5 @@
 (async function () {
-	let mods = await (await fetch("/mods.json")).json();
+	let mods = await (await fetch("mods.json")).json();
 	let version_dropdown = document.getElementById("version");
 	let modloader_dropdown = document.getElementById("modloader");
 	let type_dropdown = document.getElementById("type");
