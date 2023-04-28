@@ -32,7 +32,7 @@
 				let link = document.createElement("a");
 				link.href = result["cf_url"];
 				let img = document.createElement("img");
-				img.src = "/images/curseforge.png";
+				img.src = "images/curseforge.png";
 				link.append(img);
 				name_cell.append(link);
 			}
@@ -40,7 +40,7 @@
 				let link = document.createElement("a");
 				link.href = result["modrinth_url"];
 				let img = document.createElement("img");
-				img.src = "/images/modrinth.png";
+				img.src = "images/modrinth.png";
 				link.append(img);
 				name_cell.append(link);
 			}
@@ -52,12 +52,12 @@
 			} else if (result["bad"] === 2) {
 				let img = document.createElement("img");
 				img.title = "Not recommended";
-				img.src = "/images/error.svg";
+				img.src = "images/error.svg";
 				name_cell.append(img);
 			} else if (result["bad"] === 3) {
 				let img = document.createElement("img");
 				img.title = "Use with caution";
-				img.src = "/images/warning.svg";
+				img.src = "images/warning.svg";
 				name_cell.append(img);
 			}
 			row.append(name_cell);
