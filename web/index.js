@@ -72,16 +72,11 @@
 	}
 
 	function on_dropdown_change() {
-		update_table(
-			modloader_dropdown.value,
-			version_dropdown.value,
-			type_dropdown.selectedOptions[0].value
-		);
-		update_params(
-			modloader_dropdown.value,
-			version_dropdown.value,
-			type_dropdown.selectedOptions[0].value
-		);
+		let modloader = modloader_dropdown.value;
+		let version = version_dropdown.value;
+		let type = type_dropdown.selectedOptions[0].value;
+		update_table(modloader, version, type);
+		update_params(modloader, version, type);
 	}
 	function main() {
 		let params = new URLSearchParams(window.location.search);
@@ -96,6 +91,14 @@
 		version_dropdown.addEventListener("change", on_dropdown_change);
 		modloader_dropdown.addEventListener("change", on_dropdown_change);
 		type_dropdown.addEventListener("change", on_dropdown_change);
+		version_search.addEventListener("change", function () {
+			let modloader = modloader_dropdown.value;
+			let version = version_search.value;
+			let type = type_dropdown.selectedOptions[0].value;
+			version_dropdown.value = version;
+			update_table(modloader, version, type);
+			update_params(modloader, version, type);
+		});
 	}
 	main();
 })();
