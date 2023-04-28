@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Curseforge Search</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+		<link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+		<script src="index.js" defer></script>
+	</head>
+	<body>
+		<main id="content">
+			<div id="dropdowns">
+				<select id="version">
+					<option>1.7.10</option>
+					<option>1.12.2</option>
+					<option>1.16.5</option>
+					<option>1.18.2</option>
+					<option>1.19.2</option>
+					<option selected>1.19.3</option>
+				</select>
+				<select id="modloader">
+					<option selected>Forge</option>
+					<option>Fabric</option>
+					<option>Quilt</option>
+				</select>
+				<select id="type">
+					<option value="performance" selected>Performance</option>
+					<option value="bugfix">Bug Fix</option>
+					<option value="utility">Utility</option>
+				</select>
+			</div>
+			<div id="advanced"><label>Advanced version search: <input id="advanced-version" placeholder="1.13.2"></input></label></div>
+			<table id="results">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Side</th>
+						<th>Incompatibilities</th>
+						<th>Notes</th>
+					</tr>
+				</thead>
+				<tbody id="results-body"></tbody>
+			</table>
+		</main>
+		<noscript>
+			This site requires Javascript to function; please enable it.
+			<style>
+				#search-form,
+				#content {
+					display: none;
+				}
+			</style>
+		</noscript>
+	</body>
+</html>
