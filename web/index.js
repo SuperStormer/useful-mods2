@@ -6,7 +6,6 @@
 	let results_body = document.getElementById("results-body");
 	let version_search = document.getElementById("advanced-version");
 	function update_params(modloader, version, type) {
-		console.log(modloader, version, type);
 		history.pushState({}, "", "?" + new URLSearchParams({ modloader, version, type }));
 	}
 	function update_table(modloader, version, type) {

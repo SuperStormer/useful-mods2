@@ -11,7 +11,7 @@ Chunk-Pregenerator,https://www.curseforge.com/minecraft/mc-mods/chunkpregenerato
 Chunky (Fabric),https://www.curseforge.com/minecraft/mc-mods/chunky-pregenerator,https://modrinth.com/mod/chunky,,"Pre-generates chunks, quickly and efficiently.",Both,Configuration Needed (7),performance,
 Chunky (Forge),https://www.curseforge.com/minecraft/mc-mods/chunky-pregenerator-forge,https://modrinth.com/mod/chunky,,"Pre-generates chunks, quickly and efficiently.",Both,Configuration Needed (7),performance,
 Clumps,https://www.curseforge.com/minecraft/mc-mods/clumps,,,Clumps groups XP orbs together into a single entity to reduce lag when there are many in a small area.,Server,,performance,
-Concurrent Chunk Management Engine,https://www.curseforge.com/minecraft/mc-mods/c2me-fabric,https://modrinth.com/mod/c2me-fabric,,Improves the chunk performance of Minecraft.,Both,Alpha (1),performance,3
+Concurrent Chunk Management Engine,https://www.curseforge.com/minecraft/mc-mods/c2me-fabric,https://modrinth.com/mod/c2me-fabric,,Improves the chunk performance of Minecraft.,Both,Alpha (1),performance,2
 Cull Clouds,https://www.curseforge.com/minecraft/mc-mods/cullclouds,https://modrinth.com/mod/cullclouds,,Adds a small optimization improves clouds building way to not render parts which you cant see to increase fps.,Client,,performance,
 Cull Leaves,https://www.curseforge.com/minecraft/mc-mods/cull-leaves,https://modrinth.com/mod/cull-leaves,Cull Less Leaves,"Adds culling to leaf blocks, providing a huge performance boost over vanilla.",Client,,performance,
 Cull Less Leaves,https://www.curseforge.com/minecraft/mc-mods/cull-less-leaves,https://modrinth.com/mod/cull-less-leaves,Cull Leaves,improved version of Cull Leaves.,Client,,performance,
@@ -97,9 +97,9 @@ Spawner Bug Fix,https://www.curseforge.com/minecraft/mc-mods/spawner-fix,,,addre
 Sulfuric,https://www.curseforge.com/minecraft/mc-mods/phosphor-reforged,,,Forge fork of Phosphor,Both,Use Starlight instead,performance,3
 AE2 Unofficial Extended Life,https://www.curseforge.com/minecraft/mc-mods/ae2-extended-life,,Applied Energistics 2,"This is a Fork of Applied Energistcs 2 since 1.12.2 in no longer supported, This version of AE2 comes with many bugfixes and performance improvments",Both,,"performance,bugfix",
 AnimFix,https://www.curseforge.com/minecraft/mc-mods/animfix,https://modrinth.com/mod/animfix,FalseTweaks,Decreases the stuttering caused by animated textures in 1.7.10,Client,Use FalseTweaks instead,performance,1
-ArchaicFix,https://www.curseforge.com/minecraft/mc-mods/archaicfix,,,ArchaicFix implements a number of bugfixes and optimizations for Minecraft 1.7.10,Both,"Some optimizations are incompatible with Optifine and Fastcraft, so they are automatically disabled","performance,bugfix",
-BetterFps,https://www.curseforge.com/minecraft/mc-mods/betterfps,,,"BetterFps is a Minecraft mod that add a few performance improvements, trying to be compatible with other mods.",Both,,performance,
-Born in a Barn,https://www.curseforge.com/minecraft/mc-mods/born-in-a-barn,,,Fixes a Minecraft bug where Village doors keep chunks loaded. No longer needed after Forge 14.23.2.2623,Server,,bugfix,
+ArchaicFix,https://www.curseforge.com/minecraft/mc-mods/archaicfix,,,Implements a number of bugfixes and optimizations for 1.7.10,Both,"Some optimizations are incompatible with Optifine and Fastcraft, so they are automatically disabled","performance,bugfix",
+BetterFps,https://www.curseforge.com/minecraft/mc-mods/betterfps,,,"Adds a few performance improvements, trying to be compatible with other mods.",Both,,performance,
+Born in a Barn,https://www.curseforge.com/minecraft/mc-mods/born-in-a-barn,,,Fixes a Minecraft bug where Village doors keep chunks loaded. No longer needed after Forge 14.23.2.2623,Server,,"bugfix,performance",
 CensoredASM,https://www.curseforge.com/minecraft/mc-mods/lolasm,,"TexFix, VanillaFix",Optimizes RAM usage.,Both,,performance,
 CoFHTweaks,https://www.curseforge.com/minecraft/mc-mods/cofhtweaks,,"ArchaicFix, FastCraft",Configuration options,Both,,performance,
 FalseTweaks,https://www.curseforge.com/minecraft/mc-mods/falsetweaks,https://modrinth.com/mod/falsetweaks,"Triangulator, AnimFix","FalsePattern's flagship tweaking, patching, and optimization mod. contains both the features from AnimFix and Triangulator",Both,,"performance,bugfix",
@@ -204,7 +204,6 @@ FPS Reducer,https://www.curseforge.com/minecraft/mc-mods/fps-reducer,,,reduces u
 HelpFixer,https://www.curseforge.com/minecraft/mc-mods/helpfixer,,,Fixes /help command with broken mods,Server,,bugfix,
 Hodgepodge,https://www.curseforge.com/minecraft/mc-mods/hodgepodge,https://modrinth.com/mod/hodgepodge,,Various Mixins and ASM optimizations,Both,Has notable overlap with other open source mods,"bugfix,performance",
 LoadingProgressBar,https://www.curseforge.com/minecraft/mc-mods/loading-progress-bar,,Aether II,Makes progress bar work again,Client,Incompatible with some mods that alter the main menu,bugfix,
-Mobs no render,https://www.curseforge.com/minecraft/mc-mods/mobs-no-render,https://modrinth.com/mod/mobs-no-render,,Reduces render distance of entities.,Client,,performance,
 Smooth Font,https://www.curseforge.com/minecraft/mc-mods/smooth-font,,,draws all fonts (including resource pack's fonts) smoothly for better readability on all scales,Client,,bugfix,
 TileEntity Reset Fix,,https://modrinth.com/mod/tileentity-reset-fix,,fix for critical bug in forge that occasionally resets tile entities,Server,,bugfix,
 VillagerMetaFix,https://www.curseforge.com/minecraft/mc-mods/villagermetafix,,,forces villagers to check the meta- and NBT-data of the items they are buying.,Both,,bugfix,

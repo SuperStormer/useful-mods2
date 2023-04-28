@@ -37,7 +37,7 @@ def get_modrinth_data(row):
 	version_data = modrinth_api(f"/project/{slug}/version")
 	versions = list(
 		set(
-		(mc_version, loader) for mod_version in version_data
+		(mc_version, loader.title()) for mod_version in version_data
 		for mc_version in mod_version["game_versions"] for loader in mod_version["loaders"]
 		)
 	)

@@ -1,6 +1,6 @@
 # useful-mods
 
-Based on https://github.com/TheUsefulLists/UsefulMods/.
+Based on https://github.com/TheUsefulLists/UsefulMods/, https://github.com/Radplay/ActuallyUsefulMods, and https://gist.github.com/makamys/7cb74cd71d93a4332d2891db2624e17c.
 
 ## Legal stuff
 
