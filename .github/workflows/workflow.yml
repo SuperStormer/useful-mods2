@@ -16,8 +16,8 @@ jobs:
             - run: |
                   cd py
                   python3 read_csv.py
-                  rm mods.json
-                  cp ../mods.json .
+                  rm ../web/mods.json
+                  cp ../mods.json ../web/mods.json
             - uses: JamesIves/github-pages-deploy-action@v4
               with:
                   folder: web
