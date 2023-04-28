@@ -75,5 +75,5 @@ with open("../mods.csv") as f:
 		unique_mods.add((row["cf_url"], row["modrinth_url"]))
 		out.append(row)
 
-with open("../mods.json", "w") as f:
+with open("../web/mods.json", "w") as f:
 	json.dump(out, f, separators=(',', ':'))
