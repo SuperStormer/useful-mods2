@@ -1,14 +1,15 @@
 import csv
 import json
-from cf_api import GAME_ID, CLASS_ID, MODLOADERS, cf_api
-from modrinth_api import modrinth_api
+from cf_api import GAME_ID, CLASS_ID, MODLOADERS as CF_MODLOADERS, cf_api
+from modrinth_api import modrinth_api, MODLOADERS as MODRINTH_MODLOADERS
 
-CF_REMOVED = ["Sodium", "Iris"]
+# list of mods that removed files from CF but still have a CF page
+# so that we can fetch version data from Modrinth instead
+CF_REMOVED = ["Sodium", "Iris Shaders", "Mod Menu"]
 
 def get_cf_data(row):
 	"""fetches version/author data from CF API"""
 	slug = row["cf_url"].split("/")[-1]
-	print(slug)
 	search_data = cf_api(
 		"/v1/mods/search", params={
 		"gameId": GAME_ID,
@@ -24,7 +25,7 @@ def get_cf_data(row):
 		# If a file has multiple supported versions, there's an entry for each version in latestFilesIndexes
 		versions = list(
 			set(
-			(file["gameVersion"], MODLOADERS[file.get("modLoader", 1)])
+			(file["gameVersion"], CF_MODLOADERS[file.get("modLoader", 1)])
 			for file in mod_data["latestFilesIndexes"]
 			)
 		)
@@ -38,7 +39,8 @@ def get_modrinth_data(row):
 	versions = list(
 		set(
 		(mc_version, loader.title()) for mod_version in version_data
-		for mc_version in mod_version["game_versions"] for loader in mod_version["loaders"]
+		for mc_version in mod_version["game_versions"]
+		for loader in mod_version["loaders"] if loader in MODRINTH_MODLOADERS
 		)
 	)
 	author = modrinth_api("/user/" + version_data[0]["author_id"])["name"]
@@ -49,6 +51,7 @@ with open("../mods.csv") as f:
 	out = []
 	unique_mods = set()
 	for row in reader:
+		print(row["name"])
 		
 		if (row["cf_url"], row["modrinth_url"]) in unique_mods:
 			print(f"{row['name']} is duplicated")

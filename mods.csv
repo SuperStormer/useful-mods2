@@ -8,8 +8,8 @@ Better Fps - Render Distance (Fabric),https://www.curseforge.com/minecraft/mc-mo
 Canary,https://www.curseforge.com/minecraft/mc-mods/canary,https://modrinth.com/mod/canary,Radium Reforged,Unofficial Forge port of Lithium,Either,,performance,
 Canvas Renderer,https://www.curseforge.com/minecraft/mc-mods/canvas-renderer,https://modrinth.com/mod/canvas,Sodium,Advanced Rendering Engine for Fabric,Client,,"performance,utility",
 Chunk-Pregenerator,https://www.curseforge.com/minecraft/mc-mods/chunkpregenerator,,,Allows you to preemptively generate chunks,Client Optional,Configuration Needed (7),"performance,utility",
-Chunky (Fabric),https://www.curseforge.com/minecraft/mc-mods/chunky-pregenerator,https://modrinth.com/mod/chunky,,"Pre-generates chunks, quickly and efficiently.",Client Optional,Configuration Needed (7),"performance,utility",
-Chunky (Forge),https://www.curseforge.com/minecraft/mc-mods/chunky-pregenerator-forge,https://modrinth.com/mod/chunky,,"Pre-generates chunks, quickly and efficiently.",Client Optional,Configuration Needed (7),"performance,utility",
+Chunky (Fabric),https://www.curseforge.com/minecraft/mc-mods/chunky-pregenerator,https://modrinth.com/mod/chunky,,"Pre-generates chunks, quickly and efficiently.",Server,Configuration Needed (7),"performance,utility",
+Chunky (Forge),https://www.curseforge.com/minecraft/mc-mods/chunky-pregenerator-forge,https://modrinth.com/mod/chunky,,"Pre-generates chunks, quickly and efficiently.",Server,Configuration Needed (7),"performance,utility",
 Clumps,https://www.curseforge.com/minecraft/mc-mods/clumps,,,Clumps groups XP orbs together into a single entity to reduce lag when there are many in a small area.,Server,,performance,
 Concurrent Chunk Management Engine,https://www.curseforge.com/minecraft/mc-mods/c2me-fabric,https://modrinth.com/mod/c2me-fabric,,Improves the chunk performance of Minecraft.,Client Optional,Alpha (1),performance,2
 Cull Clouds,https://www.curseforge.com/minecraft/mc-mods/cullclouds,https://modrinth.com/mod/cullclouds,,Adds a small optimization improves clouds building way to not render parts which you cant see to increase fps.,Client,,performance,
@@ -26,7 +26,7 @@ Entity Collision FPS Fix (Fabric),https://www.curseforge.com/minecraft/mc-mods/e
 Entity Collision FPS Fix (Forge),https://www.curseforge.com/minecraft/mc-mods/entity-collision-fps-fix,https://modrinth.com/mod/entity-collision-fps-fix,,Client Side mod that optimizes entities on the render thread.,Client,,performance,
 Entity Culling,https://www.curseforge.com/minecraft/mc-mods/entityculling,https://modrinth.com/mod/entityculling,,Uses async path-tracing to skip rendering Tiles/Entities that are not visible.,Client,,performance,
 Exordium,https://www.curseforge.com/minecraft/mc-mods/exordium,https://modrinth.com/mod/exordium,"VulkanMod, Caxton, Inventorio, MiniHUD, Canvas",Render the GUI and screens at a lower framerate to speed up what's really important: the worldrendering.,Client,,performance,3
-Fabric Chunk Pregenerator,https://www.curseforge.com/minecraft/mc-mods/chunk-pregenerator-fabric,https://modrinth.com/mod/fabricquilt-chunk-pregenerator,,Allows you to pregenerate chunks for your server or for singleplayer,Client Optional,Configuration Needed (7),"performance,utility",
+Fabric Chunk Pregenerator,https://www.curseforge.com/minecraft/mc-mods/chunk-pregenerator-fabric,https://modrinth.com/mod/fabricquilt-chunk-pregenerator,,Allows you to pregenerate chunks for your server or for singleplayer,Server,Configuration Needed (7),"performance,utility",
 FastAnim,https://www.curseforge.com/minecraft/mc-mods/fastanim,https://modrinth.com/mod/fastanim,,FastAnim is a mod that improves the animation speed of entities.,Client,,performance,
 FastChest,https://www.curseforge.com/minecraft/mc-mods/fastchest,,,This mod helps by removing dynamic models from chests and making them render as static chunk geometry.,Client,,performance,
 FastFurnace,https://www.curseforge.com/minecraft/mc-mods/fastfurnace,,,"Similar to FastWorkbench, it caches the last recipe used, and checks this recipe first before re-scanning the entire registry.",Server,,performance,
@@ -54,7 +54,7 @@ More Culling,https://www.curseforge.com/minecraft/mc-mods/moreculling,https://mo
 Observable,https://www.curseforge.com/minecraft/mc-mods/observable,https://modrinth.com/mod/observable,,Shows what's lagging your world/server by profiling (tile) entities.,Both,,utility,
 Particle Blocker,https://www.curseforge.com/minecraft/mc-mods/particle-blocker,https://modrinth.com/mod/particles,,Adds a GUI to pick and choose particles to not render.,Client,,performance,
 Phosphor (Fabric),https://www.curseforge.com/minecraft/mc-mods/phosphor,https://modrinth.com/mod/phosphor,Starlight,"Optimizes one of the game's most inefficient areas, the lighting engine",Either,Starlight usually has better performance,performance,3
-Pluto,https://www.curseforge.com/minecraft/mc-mods/pluto,https://modrinth.com/mod/pluto,Starlight,"Unofficial Forge port of Krypton, this mod aims to optimize the network stack of the game in order to provide better network performance.",Either,,performance,
+Pluto,https://www.curseforge.com/minecraft/mc-mods/pluto,https://modrinth.com/mod/pluto,,"Unofficial Forge port of Krypton, this mod aims to optimize the network stack of the game in order to provide better network performance.",Either,,performance,
 Radium Reforged,https://www.curseforge.com/minecraft/mc-mods/radium-reforged,,Canary,Unofficial Forge port of Lithium,Either,Consider using Canary instead,performance,2
 Radon,https://www.curseforge.com/minecraft/mc-mods/radon,https://modrinth.com/mod/radon,Starlight,Unofficial Forge port of Phosphor,Either,Starlight usually has better performance,performance,3
 Recipe Cache,https://www.curseforge.com/minecraft/mc-mods/recipe-cache,,"FastFurnace, FastBench (?)",Caches recipe lookup for crafting and furnaces to lessen server lag caused by crafting stacks of items and large amounts of furnaces ticking,Server,,performance,
@@ -66,7 +66,7 @@ Smoke Suppresion,https://www.curseforge.com/minecraft/mc-mods/smoke-suppression,
 Smooth Boot,https://www.curseforge.com/minecraft/mc-mods/smooth-boot,https://modrinth.com/mod/smoothboot-fabric,,Optimizes loading performance to be smoother on low end systems and scale better on high end systems.,Either,"caps the number of worker threads, so on CPUs with lots of cores it might make launching slower.",performance,3
 Smooth Boot (Reloaded),https://www.curseforge.com/minecraft/mc-mods/smooth-boot-reloaded,https://modrinth.com/mod/smooth-boot-reloaded,,Optimizes loading performance to be smoother on low end systems and scale better on high end systems.,Either,"caps the number of worker threads, so on CPUs with lots of cores it might make launching slower.",performance,3
 Smooth Chunk Save,https://www.curseforge.com/minecraft/mc-mods/smooth-chunk-save,,,"Saves chunks continuously over time, reducing server lag and preventing lagspikes from saving too many chunks at once.",Server,,performance,
-Sodium,https://www.curseforge.com/minecraft/mc-mods/sodium,https://modrinth.com/mod/sodium,,"FOSS rendering engine replacement that greatly improves frame rates, reduces micro-stutter, and fixes graphical issues in Minecraft.",Client,install Indium for compatibility with mods that use the FRAPI,performance,
+Sodium,https://www.curseforge.com/minecraft/mc-mods/sodium,https://modrinth.com/mod/sodium,,"FOSS rendering engine replacement that greatly improves frame rates, reduces micro-stutter, and fixes graphical issues in Minecraft.",Client,no longer available on Curseforge; install Indium for compatibility with mods that use the FRAPI,performance,
 Starlight (Fabric),https://www.curseforge.com/minecraft/mc-mods/starlight,https://modrinth.com/mod/starlight,,rewrites the light engine to fix lighting performance and lighting errors,Either,,performance,
 Starlight (Forge),https://www.curseforge.com/minecraft/mc-mods/starlight-forge,https://modrinth.com/mod/starlight,,rewrites the light engine to fix lighting performance and lighting errors,Either,,performance,
 Very Many Players,https://www.curseforge.com/minecraft/mc-mods/vmp-fabric,https://modrinth.com/mod/vmp-fabric,,improves general server performance at high playercount without sacrificing vanilla functionality.,Client Optional,,performance,
@@ -84,13 +84,13 @@ Angerable Patch,https://www.curseforge.com/minecraft/mc-mods/angerable-patch,,,"
 Overworld Two,https://www.curseforge.com/minecraft/mc-mods/overworld-two,,,Generates overworld and nether terrain much faster than vanilla minecraft at the cost of breaking parity,Server,breaks Vanilla seed parity,performance,3
 APTweaks,https://www.curseforge.com/minecraft/mc-mods/adaptive-performance-tweaks,,Dynamic View,Automatically adjusts specific settings on the server and client side to allow a balanced TPS/FPS.,Server,,performance,
 DataFixerSlayer,https://www.curseforge.com/minecraft/mc-mods/datafixerslayer,,Any other mod that also removes DFU,Prevents the DataFixerUpper (DFU) system from loading,Either,Use LazyDFU instead,performance,1
-Does It Tick?,https://www.curseforge.com/minecraft/mc-mods/does-it-tick,,,Limits entity ticking outside view distance,Server,breaks vanilla mob farms,performance,2
+Does It Tick?,https://www.curseforge.com/minecraft/mc-mods/does-it-tick,,,Limits entity ticking outside view distance,Both,breaks vanilla mob farms,performance,2
 DrawerFPS,https://www.curseforge.com/minecraft/mc-mods/drawerfps,,,Lets you configure the range at which Storage Drawers render items to improve fps.,Client,,performance,
 Entity Culling,https://www.curseforge.com/minecraft/mc-mods/entity-culling,,"Pixelmon, Sync",Skips rendering of hidden (tile-)entities.,Client,,performance,
 Halogen,https://www.curseforge.com/minecraft/mc-mods/halogen,,"Optifine, Magnesium, Rubidium",Unofficial Forge port of Sodium,Client,Use Rubidium instead,performance,1
 Helium,https://www.curseforge.com/minecraft/mc-mods/hydrogen-reforged,,Create,Unofficial Forge port of Hydrogen,Either,Consider using FerriteCore instead,performance,2
-MCMT,https://www.curseforge.com/minecraft/mc-mods/mcmt-multithreading,https://modrinth.com/mod/mcmtfabric,"Immersive Portals, Performant, Clumps","Dispaches all worlds, entities, tile entites and environment ticks to a thread pool, allowing for parallel execution",Server,Corruption (1),performance,2
-Out of Sight,https://www.curseforge.com/minecraft/mc-mods/out-of-sight,,,stops modded tile entities from rendering if they are further than 24 blocks away,Client,Reverse Features,performance,3
+MCMT,https://www.curseforge.com/minecraft/mc-mods/mcmt-multithreading,https://modrinth.com/mod/mcmtfabric,"Immersive Portals, Performant, Clumps, Lycanites Mobs ","Dispaches all worlds, entities, tile entites and environment ticks to a thread pool, allowing for parallel execution",Server,Corruption (1),performance,2
+Out of Sight,https://www.curseforge.com/minecraft/mc-mods/out-of-sight,,,stops modded tile entities from rendering if they are further than 24 blocks away,Client,obvious pop-in of tile entities as you get closer to them,performance,3
 Performant,https://www.curseforge.com/minecraft/mc-mods/performant,,"Botania, IE, Bewitchment, Resourceful Bees, many more",improves performance and blocklag.,Server,"closed source, breaks many mods",performance,2
 RoadRunner,https://www.curseforge.com/minecraft/mc-mods/roadrunner,,,Unofficial Forge port of Lithium,Server,,performance,
 Spawner Bug Fix,https://www.curseforge.com/minecraft/mc-mods/spawner-fix,,,addresses a bug which causes lag in mods that create custom spawners.,Client,,performance,
@@ -127,7 +127,7 @@ Blockfire,,https://modrinth.com/mod/blockfire,,Fixes the 1.12 bug of fire arrows
 Carpet-Fixes,https://www.curseforge.com/minecraft/mc-mods/carpet-fixes,https://modrinth.com/mod/carpet-fixes,,Carpet extension which fixes hundreds of vanilla bugs.,Either,,bugfix,
 Chat Lag Fix,,https://modrinth.com/mod/chat-lag-fix,,Fixes Minecraft client lag from receiving chat messages,Client,,bugfix,
 Connectivity,https://www.curseforge.com/minecraft/mc-mods/connectivity,,,"Lightweight mod which solves several connection problems like DecoderException, Packet size larget than X bytes, Payload too large and more.",Either,,bugfix,
-Debugify,https://www.curseforge.com/minecraft/mc-mods/debugify,https://modrinth.com/mod/debugify,,Fixes a variety of bugs.,Either,MC-147605 patch breaks JEI's search bar (see Debugify#169),bugfix,3
+Debugify,https://www.curseforge.com/minecraft/mc-mods/debugify,https://modrinth.com/mod/debugify,,Fixes a variety of bugs.,Either,"MC-147605 patch breaks JEI's search bar (see Debugify#169), can be disabled in config",bugfix,3
 Dimension Fix,https://www.curseforge.com/minecraft/mc-mods/dimension-fix-some-forge-patches-ported,https://modrinth.com/mod/dimension-fix,,Fix MC-197860: Deleting a custom dimension in a data pack deletes Nether and End.,Both,,bugfix,
 Dimension Update Fixer,,https://modrinth.com/mod/dimension-update-fixer,,Fixes the issue where removing a dimension from a world deletes all other dimensions.,Server,,bugfix,
 DupeFix Project,https://www.curseforge.com/minecraft/mc-mods/dupefix-project,,,Fix as many dupes as possible so that modpacks and servers can take advantage of several mods without having to ban items from them.,Client Optional,,bugfix,
@@ -187,14 +187,14 @@ Legacy LazyDFU,,https://modrinth.com/mod/legacy-lazydfu,,"LazyDFU is an optimiza
 Legacy Advancements Debug,,https://modrinth.com/mod/legacy-advancements-debug,,Makes advancement checking faster,Server,,performance,
 Had Enough Items,https://www.curseforge.com/minecraft/mc-mods/had-enough-items,,,A fork of Just Enough Items with memory and performance optimizations,Client,,performance,
 Hesperus,https://www.curseforge.com/minecraft/mc-mods/hesperus,,Mods using outdated mixin versions,"Continuation of Phosphor for 1.12.2, with improved compatibility",Either,,performance,
-Let Me Despawn,https://www.curseforge.com/minecraft/mc-mods/let-me-despawn,https://modrinth.com/mod/lmd,,Helps with lag caused by accidental persistent mobs.,Server,Reverse features (7),performance,2
+Let Me Despawn,https://www.curseforge.com/minecraft/mc-mods/let-me-despawn,https://modrinth.com/mod/lmd,,Helps with lag caused by accidental persistent mobs by allowing mobs holding items to despawn,Server,may break certain vanilla farms (eg. iron) and cause items dropped after death to despawn (because a mob picked it up),performance,2
 Multithreaded Noise,https://www.curseforge.com/minecraft/mc-mods/multithreaded-noise,,,makes overworld terrain generate faster by replacing the three 3D noise generators in the overworld with multithreaded versions.,Server,Alpha (1),performance,2
 NormalASM,https://www.curseforge.com/minecraft/mc-mods/normalasm,https://modrinth.com/mod/normalasm,"TexFix, VanillaFix",Optimize RAM usage.,Both,,performance,
 Unloader,https://www.curseforge.com/minecraft/mc-mods/unloader,,,Checks for unused dimensions every 30 seconds (600 ticks) to unload by default,Client Optional,Use UniversalTweaks instead,performance,1
 Tinkers OreDict Cache,https://www.curseforge.com/minecraft/mc-mods/tinkers-oredict-cache,,,Caches Tinkers Construct melting recipes to speed up game loading time,Both,,performance,
 ChunkPurge,https://www.curseforge.com/minecraft/mc-mods/chunkpurge,,,"Periodically scans the loaded chunks in each dimension that are configured to be scanned, and identifies those which are isolated from any valid chunk watchers, then unloads them",Server,,performance,
 Flying Cullers,https://www.curseforge.com/minecraft/mc-mods/flying-cullers,https://modrinth.com/mod/flying-cullers,,Dynamically adjusts the render distance of entities and tile entities based on your frame rate,Client,,performance,
-No Leaf Decay,,https://modrinth.com/mod/no-leaf-decay,,Prevents leaves from decaying,Both,Reverse Features (7),performance,2
+No Leaf Decay,,https://modrinth.com/mod/no-leaf-decay,,Prevents leaves from decaying,Both,breaks vanilla leaf behavior,performance,2
 NotEnoughItems Unofficial,https://www.curseforge.com/minecraft/mc-mods/notenoughitems-gtnh,https://modrinth.com/mod/notenoughitems-unofficial,,GTNH fork of NotEnoughItems with performance and stability improvements,Server Optional,,"performance,utility",
 Not Enough Crashes (Forge),https://www.curseforge.com/minecraft/mc-mods/not-enough-crashes-forge,https://modrinth.com/mod/notenoughcrashes,,improves crashing,Either,,utility,
 Not Enough Crashes (Fabric),https://www.curseforge.com/minecraft/mc-mods/not-enough-crashes,https://modrinth.com/mod/notenoughcrashes,,improves crashing,Either,,utility,
@@ -204,7 +204,7 @@ HelpFixer,https://www.curseforge.com/minecraft/mc-mods/helpfixer,,,Fixes /help c
 Hodgepodge,https://www.curseforge.com/minecraft/mc-mods/hodgepodge,https://modrinth.com/mod/hodgepodge,,Various Mixins and ASM optimizations,Either,Has notable overlap with other open source mods,"bugfix,performance",
 LoadingProgressBar,https://www.curseforge.com/minecraft/mc-mods/loading-progress-bar,,Aether II,Makes progress bar work again,Client,Incompatible with some mods that alter the main menu,bugfix,
 Smooth Font,https://www.curseforge.com/minecraft/mc-mods/smooth-font,,,draws all fonts (including resource pack's fonts) smoothly for better readability on all scales,Client,,bugfix,
-TileEntity Reset Fix,,https://modrinth.com/mod/tileentity-reset-fix,,fix for critical bug in forge that occasionally resets tile entities,Server,,bugfix,
+TileEntity Reset Fix,,https://modrinth.com/mod/tileentity-reset-fix,,fix for critical bug in Forge that occasionally resets tile entities,Server,,bugfix,
 VillagerMetaFix,https://www.curseforge.com/minecraft/mc-mods/villagermetafix,,,forces villagers to check the meta- and NBT-data of the items they are buying.,Client Optional,,bugfix,
 EndlessIDs,https://www.curseforge.com/minecraft/mc-mods/endlessids,https://modrinth.com/mod/endlessids,,increases ID limit,Both,,bugfix,
 NotEnoughIDs,https://www.curseforge.com/minecraft/mc-mods/notenoughids,,,increases ID limit,Both,Use EndlessIDs or JustEnoughIDs,bugfix,1
@@ -215,7 +215,7 @@ PotionExtension,https://www.curseforge.com/minecraft/mc-mods/potionextension,,,e
 Enchantment ID Extender,https://www.curseforge.com/minecraft/mc-mods/enchantment-id-extender,https://modrinth.com/mod/eide,,extends enchantment IDs from 256 to 4096,Both,,bugfix,
 Sampler,https://www.curseforge.com/minecraft/mc-mods/sampler,,,A sampling profiler (sampler) to see exactly where the Minecraft client/server spends its time,Either,,utility,
 Lag Goggles: Legacy,,https://modrinth.com/mod/lglegacy,,"profiler where you can see timings in the world, visually",Either,,utility,
-Iris Shaders,https://www.curseforge.com/minecraft/mc-mods/irisshaders,https://modrinth.com/mod/iris,,A modern shaders mod for Minecraft intended to be compatible with existing OptiFine shader packs,Client,,utility,
+Iris Shaders,https://www.curseforge.com/minecraft/mc-mods/irisshaders,https://modrinth.com/mod/iris,,A modern shaders mod for Minecraft intended to be compatible with existing OptiFine shader packs,Client,Curseforge version is outdated,utility,
 Oculus,https://www.curseforge.com/minecraft/mc-mods/oculus,https://modrinth.com/mod/oculus,Literal Sky Block,"Forge port of Iris, a modern shaders mod for Minecraft intended to be compatible with existing OptiFine shader packs",Client,,utility,
 Cyanide,https://www.curseforge.com/minecraft/mc-mods/cyanide-fabric,,,Improves datapack error logging,Server,,utility,
 "No See, No Tick",https://www.curseforge.com/minecraft/mc-mods/no-see-no-tick,,,disables entities ticking if too far away from the player,Server,breaks vanilla mob farms,performance,2
@@ -233,3 +233,8 @@ Shutup Experimental Settings!,https://www.curseforge.com/minecraft/mc-mods/shutu
 Disable Custom Worlds Advice,https://www.curseforge.com/minecraft/mc-mods/fabric-disable-custom-worlds-advice,https://modrinth.com/mod/dcwa,,"disables the ""Experimental Features"" popup that appears every time you create or load a world with custom dimensions or world settings.",Client,,utility,
 Yeetus Experimentus,https://www.curseforge.com/minecraft/mc-mods/yeetusexperimentus,,,"disables the ""Experimental Features"" popup that appears every time you create or load a world with custom dimensions or world settings.",Client,,utility,
 Cull Particles,https://www.curseforge.com/minecraft/mc-mods/cull-particles,,,increases FPS by not rendering particles that the player can't see,Client,implemented by newer versions of Forge,performance,1
+Chlorine,https://www.curseforge.com/minecraft/mc-mods/chlorine,,,Unofficial Forge port of Sodium,Client,Use Rubidium instead,performance,1
+Sodium Extra,https://www.curseforge.com/minecraft/mc-mods/sodium-extra,https://modrinth.com/mod/sodium-extra,,"toggle animations, particles, details, rendering, etc",Client,requires Rubidium,performance,
+Rubidium Extra,https://www.curseforge.com/minecraft/mc-mods/rubidium-extra,,,"Unofficial Forge port of Sodium Extra. toggle animations, particles, details, rendering, etc.",Client,requires Rubidium,performance,
+TabTPS,,https://modrinth.com/plugin/tabtps,,"shows TPS, MSPT, etc in the tab menu, boss bar, and action bar; adds commands for checking current TPS, memory and ping",Server,,utility,
+Mod Menu,https://www.curseforge.com/minecraft/mc-mods/modmenu,https://modrinth.com/mod/modmenu,,adds a list of mods accessed via a menu button,Client,no longer available on Curseforge,utility,

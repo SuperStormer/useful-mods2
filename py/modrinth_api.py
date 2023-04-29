@@ -1,5 +1,7 @@
 import requests
 
+MODLOADERS = ["forge", "fabric", "quilt"]
+
 def modrinth_api(endpoint: str, params=None, **kwargs):
 	kwargs = {
 		"method": "GET",
