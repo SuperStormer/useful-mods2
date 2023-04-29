@@ -30,17 +30,19 @@
 			let row = document.createElement("tr");
 
 			let name_cell = document.createElement("td");
+			let name_container = document.createElement("div");
+			name_container.className = "name-container";
 			let name_link = document.createElement("a");
 			name_link.textContent = result["name"];
 			name_link.href = result["cf_url"] || result["modrinth_url"];
-			name_cell.append(name_link);
+			name_container.append(name_link);
 			if (result["cf_url"]) {
 				let link = document.createElement("a");
 				link.href = result["cf_url"];
 				let img = document.createElement("img");
 				img.src = "images/curseforge.png";
 				link.append(img);
-				name_cell.append(link);
+				name_container.append(link);
 			}
 			if (result["modrinth_url"]) {
 				let link = document.createElement("a");
@@ -48,7 +50,7 @@
 				let img = document.createElement("img");
 				img.src = "images/modrinth.png";
 				link.append(img);
-				name_cell.append(link);
+				name_container.append(link);
 			}
 
 			// 1 = replaced by other mods, 2 = not recommended, 3 = use with caution
@@ -59,13 +61,14 @@
 				let img = document.createElement("img");
 				img.title = "Not recommended";
 				img.src = "images/error.svg";
-				name_cell.append(img);
+				name_container.append(img);
 			} else if (result["bad"] === 3) {
 				let img = document.createElement("img");
 				img.title = "Use with caution";
 				img.src = "images/warning.svg";
-				name_cell.append(img);
+				name_container.append(img);
 			}
+			name_cell.append(name_container);
 			row.append(name_cell);
 
 			for (let key of ["description", "side", "incompat", "notes"]) {
