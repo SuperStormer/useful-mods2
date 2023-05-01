@@ -5,16 +5,28 @@
 		clientonly: ["Client", "Either", "Server Optional"],
 		serveronly: ["Server", "Either", "Client Optional"],
 	};
-	let version_dropdown = document.getElementById("version");
 	let modloader_dropdown = document.getElementById("modloader");
+	let version_dropdown = document.getElementById("version");
 	let type_dropdown = document.getElementById("type");
 	let side_dropdown = document.getElementById("side");
+	let status_dropdown = document.getElementById("status");
+	let dropdowns = [
+		modloader_dropdown,
+		version_dropdown,
+		type_dropdown,
+		side_dropdown,
+		status_dropdown,
+	];
 	let results_body = document.getElementById("results-body");
 	let version_search = document.getElementById("advanced-version");
-	function update_params(modloader, version, type, side) {
-		history.pushState({}, "", "?" + new URLSearchParams({ modloader, version, type, side }));
+	function update_params(modloader, version, type, side, status) {
+		history.pushState(
+			{},
+			"",
+			"?" + new URLSearchParams({ modloader, version, type, side, status })
+		);
 	}
-	function update_table(modloader, version, type, sides) {
+	function update_table(modloader, version, type, sides, status) {
 		results_body.innerHTML = "";
 
 		let results = mods
@@ -22,7 +34,8 @@
 				(mod) =>
 					mod.versions.some((v) => v[0] === version && v[1] === modloader) &&
 					mod.type.includes(type) &&
-					sides.includes(mod.side)
+					sides.includes(mod.side) &&
+					(mod.status === 0 || mod.status >= status)
 			)
 			.sort((a, b) => a.name.localeCompare(b.name));
 
@@ -54,20 +67,18 @@
 			}
 
 			// 1 = replaced by other mods, 2 = not recommended, 3 = use with caution
-			if (result["bad"] === 1) {
-				// TODO option for showing all, regardless of status
-				continue;
-			} else if (result["bad"] === 2) {
+			if (result["status"] === 1 || result["status"] === 2) {
 				let img = document.createElement("img");
-				img.title = "Not recommended";
+				img.title = result["status"] === 1 ? "Replaced by other mods" : "Not recommended";
 				img.src = "images/error.svg";
 				name_container.append(img);
-			} else if (result["bad"] === 3) {
+			} else if (result["status"] === 3) {
 				let img = document.createElement("img");
 				img.title = "Use with caution";
 				img.src = "images/warning.svg";
 				name_container.append(img);
 			}
+
 			name_cell.append(name_container);
 			row.append(name_cell);
 
@@ -80,43 +91,56 @@
 		}
 	}
 
-	function on_dropdown_change() {
-		let modloader = modloader_dropdown.value;
-		let version = version_dropdown.value;
-		let type = type_dropdown.selectedOptions[0].value;
-		let side = side_dropdown.selectedOptions[0].value;
-		let sides = sides_map[side];
-
-		update_table(modloader, version, type, sides);
-		update_params(modloader, version, type, side);
+	function get_dropdown_values() {
+		return dropdowns.map((dropdown) => dropdown.selectedOptions[0]?.value ?? dropdown.value);
 	}
+
+	function set_dropdown_values(...values) {
+		if (values.length !== dropdowns.length) {
+			throw new Error(
+				`values.length (${values.length}) !== dropdowns.length (${dropdowns.length})`
+			);
+		}
+		for (let i = 0; i < dropdowns.length; i++) {
+			dropdowns[i].value = values[i];
+		}
+	}
+
+	function on_dropdown_change() {
+		let [modloader, version, type, side, status] = get_dropdown_values();
+		let sides = sides_map[side];
+		status = parseInt(status, 10);
+
+		update_table(modloader, version, type, sides, status);
+		update_params(modloader, version, type, side, status);
+	}
+
 	function main() {
 		let params = new URLSearchParams(window.location.search);
 		let modloader = params.get("modloader") || "Forge";
 		let version = params.get("version") || "1.19.3";
 		let type = params.get("type") || "performance";
 		let side = params.get("side") || "all";
-		modloader_dropdown.value = modloader;
-		version_dropdown.value = version;
-		type_dropdown.value = type;
-		side_dropdown.value = side;
-		let sides = sides_map[side] || side;
-		update_table(modloader, version, type, sides);
+		let status = parseInt(params.get("status") || 3, 10);
 
-		version_dropdown.addEventListener("change", on_dropdown_change);
-		modloader_dropdown.addEventListener("change", on_dropdown_change);
-		type_dropdown.addEventListener("change", on_dropdown_change);
-		side_dropdown.addEventListener("change", on_dropdown_change);
+		set_dropdown_values(modloader, version, type, side, status);
+
+		let sides = sides_map[side] || side;
+		update_table(modloader, version, type, sides, status);
+
+		for (let dropdown of dropdowns) {
+			dropdown.addEventListener("change", on_dropdown_change);
+		}
+
 		version_search.addEventListener("change", function () {
-			let modloader = modloader_dropdown.value;
-			let version = version_search.value;
-			let type = type_dropdown.selectedOptions[0].value;
-			let side = side_dropdown.selectedOptions[0].value;
+			let [modloader, _, type, side, status] = get_dropdown_values();
 			let sides = sides_map[side];
 
+			let version = version_search.value;
 			version_dropdown.value = version;
-			update_table(modloader, version, type, sides);
-			update_params(modloader, version, type, side);
+
+			update_table(modloader, version, type, sides, status);
+			update_params(modloader, version, type, side, status);
 		});
 	}
 	main();

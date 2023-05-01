@@ -32,11 +32,20 @@
 				</select>
 				<select id="side">
 					<option value="all" selected>All</option>
-					<option value="clientonly" >Client Only</option>
+					<option value="clientonly">Client Only</option>
 					<option value="serveronly">Server Only</option>
 				</select>
+				<select id="status">
+					<option value="4">Mostly Safe</option>
+					<option value="3" selected>Use Caution</option>
+					<option value="2">All</option>
+				</select>
 			</div>
-			<div id="advanced"><label>Advanced version search: <input id="advanced-version" placeholder="1.13.2"></input></label></div>
+			<div id="advanced">
+				<label>
+					Advanced version search: <input id="advanced-version" placeholder="1.13.2" />
+				</label>
+			</div>
 			<table id="results">
 				<thead>
 					<tr>
@@ -53,7 +62,6 @@
 		<noscript>
 			This site requires Javascript to function; please enable it.
 			<style>
-				#search-form,
 				#content {
 					display: none;
 				}

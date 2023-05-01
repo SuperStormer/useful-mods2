@@ -46,37 +46,41 @@ def get_modrinth_data(row):
 	author = modrinth_api("/user/" + version_data[0]["author_id"])["name"]
 	return (versions, author)
 
-with open("../mods.csv") as f:
-	reader = csv.DictReader(f)
-	out = []
-	unique_mods = set()
-	for row in reader:
-		print(row["name"])
-		
-		if (row["cf_url"], row["modrinth_url"]) in unique_mods:
-			print(f"{row['name']} is duplicated")
-		
-		# fetch version/author data
-		if row["cf_url"] and row["name"] not in CF_REMOVED:
-			data = get_cf_data(row)
-			if data is None:
-				if row["modrinth_url"]:
-					data = get_modrinth_data(row)
-				else:
-					print(f"{row['name']!r} has no CF or Modrinth url")
-					data = ([], "")
-		elif row["modrinth_url"]:
-			data = get_modrinth_data(row)
-		else:
-			print(f"{row['name']!r} has no CF or Modrinth url")
-			data = ([], "")
-		row["versions"], row["author"] = data
-		
-		row["type"] = row["type"].split(",")
-		row["bad"] = 0 if not row["bad"] else int(row["bad"])
-		
-		unique_mods.add((row["cf_url"], row["modrinth_url"]))
-		out.append(row)
+def main():
+	with open("../mods.csv") as f:
+		reader = csv.DictReader(f)
+		out = []
+		unique_mods = set()
+		for row in reader:
+			print(row["name"])
+			
+			if (row["cf_url"], row["modrinth_url"]) in unique_mods:
+				print(f"{row['name']} is duplicated")
+			
+			# fetch version/author data
+			if row["cf_url"] and row["name"] not in CF_REMOVED:
+				data = get_cf_data(row)
+				if data is None:
+					if row["modrinth_url"]:
+						data = get_modrinth_data(row)
+					else:
+						print(f"{row['name']!r} has no CF or Modrinth url")
+						data = ([], "")
+			elif row["modrinth_url"]:
+				data = get_modrinth_data(row)
+			else:
+				print(f"{row['name']!r} has no CF or Modrinth url")
+				data = ([], "")
+			row["versions"], row["author"] = data
+			
+			row["type"] = row["type"].split(",")
+			row["status"] = 0 if not row["status"] else int(row["status"])
+			
+			unique_mods.add((row["cf_url"], row["modrinth_url"]))
+			out.append(row)
+	
+	with open("../web/mods.json", "w") as f:
+		json.dump(out, f, separators=(',', ':'))
 
-with open("../web/mods.json", "w") as f:
-	json.dump(out, f, separators=(',', ':'))
+if __name__ == "__main__":
+	main()
