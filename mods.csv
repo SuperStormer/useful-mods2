@@ -99,7 +99,7 @@ AnimFix,https://www.curseforge.com/minecraft/mc-mods/animfix,https://modrinth.co
 ArchaicFix,https://www.curseforge.com/minecraft/mc-mods/archaicfix,,,Implements a number of bugfixes and optimizations for 1.7.10,Either,"Some optimizations are incompatible with Optifine and Fastcraft, so they are automatically disabled","performance,bugfix",
 BetterFps,https://www.curseforge.com/minecraft/mc-mods/betterfps,,,"Adds a few performance improvements, trying to be compatible with other mods.",Either,,performance,
 Born in a Barn,https://www.curseforge.com/minecraft/mc-mods/born-in-a-barn,,,Fixes a Minecraft bug where Village doors keep chunks loaded. No longer needed after Forge 14.23.2.2623,Server,,"bugfix,performance",
-CensoredASM,https://www.curseforge.com/minecraft/mc-mods/lolasm,,"TexFix, VanillaFix",Optimizes RAM usage.,Both,,performance,
+CensoredASM,https://www.curseforge.com/minecraft/mc-mods/lolasm,,"TexFix, VanillaFix",Optimizes RAM usage.,Both,,"performance,utility,bugfix",
 CoFHTweaks,https://www.curseforge.com/minecraft/mc-mods/cofhtweaks,,"ArchaicFix, FastCraft",Configuration options,Either,,performance,
 FalseTweaks,https://www.curseforge.com/minecraft/mc-mods/falsetweaks,https://modrinth.com/mod/falsetweaks,"Triangulator, AnimFix","FalsePattern's flagship tweaking, patching, and optimization mod. contains both the features from AnimFix and Triangulator",Either,,"performance,bugfix",
 FastCraft,https://www.curseforge.com/minecraft/mc-mods/fastcraft,,"Forge Essentials, CoFHTweaks",A sophisticated mod which improves the client and server performance significantly without any game play changes.,Either,,performance,
@@ -114,7 +114,7 @@ TexFix,https://www.curseforge.com/minecraft/mc-mods/texfix,,"FoamFix-Anarchy, MC
 Tick Dynamic,https://www.curseforge.com/minecraft/mc-mods/tick-dynamic,,,Attempts to keep the server at 20tps by dynamically limiting the amount of entities and tile-entities that update per tick,Server,,performance,
 Tiquality,https://www.curseforge.com/minecraft/mc-mods/tiquality,,,Limiting a player's tick time in the world to evenly distribute time.,Server,may hide TPS issues,performance,2
 Universal Tweaks,https://www.curseforge.com/minecraft/mc-mods/universal-tweaks,,"AI Improvements, FastWorkbench, Fast Leaf Decay, Tinkers OreDict Cache, mods using outdated mixin versions",A ton of performance and bugfix mods in one,Either,,performance,
-VanillaFix,https://www.curseforge.com/minecraft/mc-mods/vanillafix,https://modrinth.com/mod/vanillafix,"Mods using outdated mixin versions, (NormalASM/CensoredASM)",Improves performance and fixes bugs and annoyances in vanilla Minecraft,Client,Use NormalASM/CensoredASM instead,performance,1
+VanillaFix,https://www.curseforge.com/minecraft/mc-mods/vanillafix,https://modrinth.com/mod/vanillafix,"Mods using outdated mixin versions, (NormalASM/CensoredASM)",Improves performance and fixes bugs and annoyances in vanilla Minecraft,Client,Use NormalASM/CensoredASM instead,"performance,bugfix,utility",1
 Advancements Debug,https://www.curseforge.com/minecraft/mc-mods/advancements-debug,https://modrinth.com/mod/advancements-debug,,"Rewrites one function of the advancements logic to make advancements checking faster, and use less recursion.",Server,,bugfix,
 AntiGhost,https://www.curseforge.com/minecraft/mc-mods/antighost,https://modrinth.com/mod/antighost,,Removes all ghost blocks whithin a 4 block radius cube with press of a configurable key.,Client,,bugfix,
 AttributeFix,https://www.curseforge.com/minecraft/mc-mods/attributefix,,,"Removes attribute caps, which can cause unintended behavior with some mods",Server,,bugfix,
@@ -188,7 +188,7 @@ Had Enough Items,https://www.curseforge.com/minecraft/mc-mods/had-enough-items,,
 Hesperus,https://www.curseforge.com/minecraft/mc-mods/hesperus,,Mods using outdated mixin versions,"Continuation of Phosphor for 1.12.2, with improved compatibility",Either,,performance,
 Let Me Despawn,https://www.curseforge.com/minecraft/mc-mods/let-me-despawn,https://modrinth.com/mod/lmd,,Helps with lag caused by accidental persistent mobs by allowing mobs holding items to despawn,Server,may break certain vanilla farms (eg. iron) and cause items dropped after death to despawn (because a mob picked it up),performance,2
 Multithreaded Noise,https://www.curseforge.com/minecraft/mc-mods/multithreaded-noise,,,makes overworld terrain generate faster by replacing the three 3D noise generators in the overworld with multithreaded versions.,Server,Alpha (1),performance,2
-NormalASM,https://www.curseforge.com/minecraft/mc-mods/normalasm,https://modrinth.com/mod/normalasm,"TexFix, VanillaFix",Optimize RAM usage.,Both,,performance,
+NormalASM,https://www.curseforge.com/minecraft/mc-mods/normalasm,https://modrinth.com/mod/normalasm,"TexFix, VanillaFix",Optimize RAM usage.,Both,fork of CensoredASM without questionable names,"performance,utility,bugfix",
 Unloader,https://www.curseforge.com/minecraft/mc-mods/unloader,,,Checks for unused dimensions every 30 seconds (600 ticks) to unload by default,Client Optional,Use UniversalTweaks instead,performance,1
 Tinkers OreDict Cache,https://www.curseforge.com/minecraft/mc-mods/tinkers-oredict-cache,,,Caches Tinkers Construct melting recipes to speed up game loading time,Both,,performance,
 ChunkPurge,https://www.curseforge.com/minecraft/mc-mods/chunkpurge,,,"Periodically scans the loaded chunks in each dimension that are configured to be scanned, and identifies those which are isolated from any valid chunk watchers, then unloads them",Server,,performance,
@@ -253,3 +253,10 @@ AntiShulkerDupe,,https://modrinth.com/mod/antishulkerdupe,,Patches the 1.17-1.19
 Chunk Saving Fix,https://www.curseforge.com/minecraft/mc-mods/chunk-saving-fix,,,Fixes MC-224729 which causes worldgen happening far away from the player to be cut off,Server,,bugfix,
 Chocolate Fix,https://www.curseforge.com/minecraft/mc-mods/chocolate-fix,,,Fixes a few worldgen bugs,Server,Some fixes are in later version of Forge,bugfix,
 Crash Utilities,https://www.curseforge.com/minecraft/mc-mods/crash-utilities,,,adds a number of tools for finding and fixing common server problems.,Client Optional,,bugfix,
+Legacy VanillaFix,,https://modrinth.com/mod/legacyvanillafix,,Unofficial Legacy Fabric port of Vanilla Fix,Client,,"performance,bugfix,utility",
+MixinTrace,https://www.curseforge.com/minecraft/mc-mods/mixintrace,https://modrinth.com/mod/mixintrace,,adds a list of mixins to classes in the stack trace of crash reports,Server,,utility,
+Modern Keybinding (Forge),https://www.curseforge.com/minecraft/mc-mods/modern-keybinding,https://modrinth.com/mod/modernkeybinding,,Backports key modifiers,Client,,utility,
+Modern Keybinding (Fabric),https://www.curseforge.com/minecraft/mc-mods/modern-keybinding-fabric,https://modrinth.com/mod/modernkeybinding,,Backports key modifiers,Client,,utility,
+Controlling (Forge),https://www.curseforge.com/minecraft/mc-mods/controlling,,,Adds the ability to search for keybinds using their name,Client,,utility,
+Configured,https://www.curseforge.com/minecraft/mc-mods/configured,,,dynamically creates a configuration menu for every mod,Client,may have bugs due to other mods' nonstandard behavior,utility,3
+Catalogue,https://www.curseforge.com/minecraft/mc-mods/catalogue,,,replaces Forge's mod list menu with an updated and modernised version,Client,,utility,

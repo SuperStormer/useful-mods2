@@ -106,10 +106,16 @@
 		}
 	}
 
-	function on_dropdown_change() {
+	function on_dropdown_change(event) {
 		let [modloader, version, type, side, status] = get_dropdown_values();
 		let sides = sides_map[side];
 		status = parseInt(status, 10);
+
+		if (event.target !== version_dropdown) {
+			version = version_search.value || version;
+		} else {
+			version_search.value = "";
+		}
 
 		update_table(modloader, version, type, sides, status);
 		update_params(modloader, version, type, side, status);
@@ -133,10 +139,10 @@
 		}
 
 		version_search.addEventListener("change", function () {
-			let [modloader, _, type, side, status] = get_dropdown_values();
+			let [modloader, version, type, side, status] = get_dropdown_values();
 			let sides = sides_map[side];
 
-			let version = version_search.value;
+			version = version_search.value;
 			version_dropdown.value = version;
 
 			update_table(modloader, version, type, sides, status);
