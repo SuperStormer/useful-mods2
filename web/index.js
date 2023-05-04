@@ -124,7 +124,7 @@
 	function main() {
 		let params = new URLSearchParams(window.location.search);
 		let modloader = params.get("modloader") || "Forge";
-		let version = params.get("version") || "1.19.3";
+		let version = params.get("version") || "1.19.2";
 		let type = params.get("type") || "performance";
 		let side = params.get("side") || "all";
 		let status = parseInt(params.get("status") || 3, 10);
