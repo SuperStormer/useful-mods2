@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import csv
 import json
 from cf_api import GAME_ID, CLASS_ID, MODLOADERS as CF_MODLOADERS, cf_api

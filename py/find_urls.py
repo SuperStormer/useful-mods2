@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # fills in CF/Modrinth URLs in the CSV
 import csv
 from cf_api import GAME_ID, CLASS_ID, cf_api

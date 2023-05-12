@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import csv
 from modrinth_api import modrinth_api
 
