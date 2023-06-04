@@ -57,7 +57,7 @@ Pluto,https://www.curseforge.com/minecraft/mc-mods/pluto,https://modrinth.com/mo
 Radium Reforged,https://www.curseforge.com/minecraft/mc-mods/radium-reforged,,Canary,Unofficial Forge port of Lithium. A general-purpose optimization mod which works to improve a number of systems without changing any behavior,Either,Consider using Canary instead,performance,2
 Radon,https://www.curseforge.com/minecraft/mc-mods/radon,https://modrinth.com/mod/radon,Starlight,"Unofficial Forge port of Phosphor. Optimizes one of the game's most inefficient areas, the lighting engine",Either,Starlight usually has better performance,performance,3
 Recipe Cache,https://www.curseforge.com/minecraft/mc-mods/recipe-cache,,"FastFurnace, FastBench (?)",Caches recipe lookup for crafting and furnaces to lessen server lag caused by crafting stacks of items and large amounts of furnaces ticking,Server,,performance,
-Rubidium,https://www.curseforge.com/minecraft/mc-mods/rubidium,https://modrinth.com/mod/rubidium,"Magnesium, Optifine","Unofficial Forge port of Sodium. FOSS rendering engine replacement that greatly improves frame rates, reduces micro-stutter, and fixes graphical issues.",Client,,performance,
+Rubidium,https://www.curseforge.com/minecraft/mc-mods/rubidium,https://modrinth.com/mod/rubidium,"Magnesium, Optifine","Unofficial Forge port of Sodium. FOSS rendering engine replacement that greatly improves frame rates, reduces micro-stutter, and fixes graphical issues.",Client,incompatibilities with some mods ,performance,3
 Saturn,https://www.curseforge.com/minecraft/mc-mods/saturn,https://modrinth.com/mod/saturn,,Optimizes Minecraft's memory usage,Either,,performance,
 ServerCore,https://www.curseforge.com/minecraft/mc-mods/servercore,https://modrinth.com/mod/servercore,,Aims to optimize & add multiplayer features to the minecraft server.,Server,,performance,
 Simply No Shading,https://www.curseforge.com/minecraft/mc-mods/simply-no-shading,https://modrinth.com/mod/simply-no-shading,,"Mimics OptiFine's Internal Shader with Old Lighting OFF by default. Benefits are less lag as this mod is not a shader, stability, and compatibility with other mods.",Client,,performance,
@@ -179,8 +179,8 @@ Block Overlay Fix,https://www.curseforge.com/minecraft/mc-mods/block-overlay-fix
 ASM Fixes,https://www.curseforge.com/minecraft/mc-mods/asm-fixes-j-a-f-m,,,Stops a client/server Potion ID mismatch from causing a client crash,Both,Incompatible (7),bugfix,
 Biome Decoration Fix,https://www.curseforge.com/minecraft/mc-mods/biome-decoration-fix,,GasStation,Fixes a crash commonly occurring with a lot of heavy worldgen mods installed,Server,,bugfix,
 BugTorch,,https://modrinth.com/mod/bugtorch,,Fixes bugs and backports some features,Both,,bugfix,
-Careful Cast Corrector,https://www.curseforge.com/minecraft/mc-mods/careful-cast-corrector-ccc,,,Fixes an extremely rare case of Crashing in Worldgen,Server,,bugfix,
-Lumy Skin Patch,https://www.curseforge.com/minecraft/mc-mods/lumy-skin-patch,,,Repairs skins for Minecraft because Mojang no longer supports skins for No-UUID Minecraft versions.,Client,,bugfix,
+Careful Cast Corrector,https://www.curseforge.com/minecraft/mc-mods/careful-cast-corrector-ccc,,,Fixes an extremely rare case of crashing in worldgen,Server,,bugfix,
+Lumy Skin Patch,https://www.curseforge.com/minecraft/mc-mods/lumy-skin-patch,,,Repairs skins for Minecraft because Mojang no longer supports skins for no-UUID Minecraft versions.,Client,,bugfix,
 MojangFix,,https://modrinth.com/mod/mojangfix,,"fixes skins, authentication and more",Client,,bugfix,
 Font Fixer,none,https://modrinth.com/mod/font-fixer,,Fixes the font renderer in legacy MC.,Client,,bugfix,
 Legacy LazyDFU,,https://modrinth.com/mod/legacy-lazydfu,,"makes the initialization of DataFixerUpper ""lazy""",Either,,performance,
@@ -196,8 +196,8 @@ ChunkPurge,https://www.curseforge.com/minecraft/mc-mods/chunkpurge,,,"Periodical
 Flying Cullers,https://www.curseforge.com/minecraft/mc-mods/flying-cullers,https://modrinth.com/mod/flying-cullers,,Dynamically adjusts the render distance of entities and tile entities based on your frame rate,Client,,performance,
 No Leaf Decay,,https://modrinth.com/mod/no-leaf-decay,,Prevents leaves from decaying,Both,breaks vanilla leaf behavior,performance,2
 NotEnoughItems Unofficial,https://www.curseforge.com/minecraft/mc-mods/notenoughitems-gtnh,https://modrinth.com/mod/notenoughitems-unofficial,,GTNH fork of NotEnoughItems with performance and stability improvements,Server Optional,,"performance,utility",
-Not Enough Crashes (Forge),https://www.curseforge.com/minecraft/mc-mods/not-enough-crashes-forge,https://modrinth.com/mod/notenoughcrashes,,improves crashing,Either,,utility,
-Not Enough Crashes (Fabric),https://www.curseforge.com/minecraft/mc-mods/not-enough-crashes,https://modrinth.com/mod/notenoughcrashes,,improves crashing,Either,,utility,
+Not Enough Crashes (Forge),https://www.curseforge.com/minecraft/mc-mods/not-enough-crashes-forge,https://modrinth.com/mod/notenoughcrashes,,fancy UI after crashes,Either,sometimes causes crashes,utility,2
+Not Enough Crashes (Fabric),https://www.curseforge.com/minecraft/mc-mods/not-enough-crashes,https://modrinth.com/mod/notenoughcrashes,,fancy UI after crashes,Either,"sometimes causes crashes, consider using MixinTrace instead",utility,2
 Damage Tilt,https://www.curseforge.com/minecraft/mc-mods/damage-tilt,,,Restores damage tilt.,Both,,bugfix,
 FPS Reducer,https://www.curseforge.com/minecraft/mc-mods/fps-reducer,,,reduces unnecessary GPU and CPU load by reducing the frame rate automatically when the client window is inactive,Client,,performance,
 HelpFixer,https://www.curseforge.com/minecraft/mc-mods/helpfixer,,,Fixes /help command with broken mods,Server,,bugfix,

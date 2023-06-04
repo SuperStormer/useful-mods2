@@ -4,9 +4,9 @@ import json
 from cf_api import GAME_ID, CLASS_ID, MODLOADERS as CF_MODLOADERS, cf_api
 from modrinth_api import modrinth_api, MODLOADERS as MODRINTH_MODLOADERS
 
-# list of mods that removed files from CF but still have a CF page
+# list of mods that removed files or no longer push updates to CF but still have a CF page
 # so that we can fetch version data from Modrinth instead
-CF_REMOVED = ["Sodium", "Iris Shaders", "Mod Menu"]
+CF_REMOVED = ["Sodium", "Iris Shaders", "Mod Menu", "More Culling", "Lithium", "MemoryLeakFix"]
 
 def get_cf_data(row):
 	"""fetches version/author data from CF API"""
