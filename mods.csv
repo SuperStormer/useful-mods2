@@ -158,7 +158,7 @@ Potion ID Packet Fixer,https://www.curseforge.com/minecraft/mc-mods/potion-id-pa
 PurpurClient,,https://modrinth.com/mod/purpurclient,,Fixes client-side vanilla bugs.,Client,,bugfix,
 RandomPatches (Forge),https://www.curseforge.com/minecraft/mc-mods/randompatches-forge,https://modrinth.com/mod/randompatches,,Contains a bunch of miscellaneous patches for Minecraft,Either,,bugfix,
 Rcon Output Newline,,https://modrinth.com/mod/rconoutputnewline,,Fixes rcon output by appending a newline.,Server,,bugfix,
-Semitranslucency Fix,https://www.curseforge.com/minecraft/mc-mods/semitranslucency-fix,https://modrinth.com/mod/semitranslucency,,Allows resource packs to use semitranslucent textures.,Client,,bugfix,
+Translucency Fix,https://www.curseforge.com/minecraft/mc-mods/translucencyfix,https://modrinth.com/mod/translucencyfix,,Allows resource packs to use semitranslucent textures.,Client,,bugfix,
 Spark,https://www.curseforge.com/minecraft/mc-mods/spark,https://modrinth.com/mod/spark,,"A performance profiler for clients, servers and proxies",Either,,utility,
 Spectater,https://www.curseforge.com/minecraft/mc-mods/spectater,https://modrinth.com/mod/spectater,,fixes a spectator bug.,Client,,bugfix,
 Thorium,https://www.curseforge.com/minecraft/mc-mods/thorium,https://modrinth.com/mod/thorium,,fixes 50+ small bugs and annoyances in Minecraft.,Either,,bugfix,
