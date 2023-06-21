@@ -47,7 +47,7 @@
 			name_container.className = "name-container";
 			let name_link = document.createElement("a");
 			name_link.textContent = result["name"];
-			name_link.href = result["cf_url"] || result["modrinth_url"];
+			name_link.href = result["url"];
 			name_container.append(name_link);
 			if (result["cf_url"]) {
 				let link = document.createElement("a");

@@ -8,8 +8,8 @@ from modrinth_api import modrinth_api, MODLOADERS as MODRINTH_MODLOADERS
 # so that we can fetch version data from Modrinth instead
 CF_REMOVED = ["Sodium", "Iris Shaders", "Mod Menu", "More Culling", "Lithium", "MemoryLeakFix"]
 
-def get_cf_data(row):
-	"""fetches version/author data from CF API"""
+def get_cf_versions(row):
+	"""fetches version data from CF API"""
 	slug = row["cf_url"].split("/")[-1]
 	search_data = cf_api(
 		"/v1/mods/search", params={
@@ -19,7 +19,7 @@ def get_cf_data(row):
 		}
 	)
 	if not search_data:
-		print(f"{row['name']!r} has no CF data")
+		warn(f"{row['name']!r} has no CF data")
 		return None
 	else:
 		mod_data = search_data[0]
@@ -30,11 +30,13 @@ def get_cf_data(row):
 			for file in mod_data["latestFilesIndexes"]
 			)
 		)
-		author = mod_data["authors"][0]["name"]
-	return (versions, author)
+	return versions
 
-def get_modrinth_data(row):
-	"""fetches version/author data from Modrinth API"""
+def warn(s, *args, **kwargs):
+	print(f"\033[33;1m{s}\033[0m", *args, **kwargs)
+
+def get_modrinth_versions(row):
+	"""fetches version data from Modrinth API"""
 	slug = row["modrinth_url"].split("/")[-1]
 	version_data = modrinth_api(f"/project/{slug}/version")
 	versions = list(
@@ -44,8 +46,7 @@ def get_modrinth_data(row):
 		for loader in mod_version["loaders"] if loader in MODRINTH_MODLOADERS
 		)
 	)
-	author = modrinth_api("/user/" + version_data[0]["author_id"])["name"]
-	return (versions, author)
+	return versions
 
 def main():
 	with open("../mods.csv") as f:
@@ -54,30 +55,50 @@ def main():
 		unique_mods = set()
 		for row in reader:
 			print(row["name"])
+			if row["cf_url"] == "none":
+				row["cf_url"] = ""
+			if row["modrinth_url"] == "none":
+				row["modrinth_url"] = ""
 			
-			if (row["cf_url"], row["modrinth_url"]) in unique_mods:
-				print(f"{row['name']} is duplicated")
+			if (row["cf_url"], row["modrinth_url"], row["github_url"]) in unique_mods:
+				warn(f"{row['name']} is duplicated")
 			
 			# fetch version/author data
-			if row["cf_url"] and row["name"] not in CF_REMOVED:
-				data = get_cf_data(row)
-				if data is None:
+			if row["manual_versions"]:
+				try:
+					versions = json.loads(row["manual_versions"])
+					url = row["github_url"]
+				except ValueError:
+					warn(
+						f"{row['name']!r} has invalid manual_versions data: {row['manual_versions']!r}"
+					)
+					versions = []
+					url = ""
+			elif row["cf_url"] and row["name"] not in CF_REMOVED:
+				versions = get_cf_versions(row)
+				url = row["cf_url"]
+				if versions is None:
 					if row["modrinth_url"]:
-						data = get_modrinth_data(row)
+						versions = get_modrinth_versions(row)
+						url = row["modrinth_url"]
 					else:
-						print(f"{row['name']!r} has no CF or Modrinth url")
-						data = ([], "")
+						warn(f"{row['name']!r} has no CF or Modrinth data")
+						versions = []
+						url = ""
 			elif row["modrinth_url"]:
-				data = get_modrinth_data(row)
+				versions = get_modrinth_versions(row)
+				url = row["modrinth_url"]
 			else:
-				print(f"{row['name']!r} has no CF or Modrinth url")
-				data = ([], "")
-			row["versions"], row["author"] = data
+				warn(f"{row['name']!r} has no CF or Modrinth url")
+				versions = []
+				url = ""
+			row["versions"] = versions
+			row["url"] = url
 			
 			row["type"] = row["type"].split(",")
 			row["status"] = 0 if not row["status"] else int(row["status"])
 			
-			unique_mods.add((row["cf_url"], row["modrinth_url"]))
+			unique_mods.add((row["cf_url"], row["modrinth_url"], row["github_url"]))
 			out.append(row)
 	
 	with open("../web/mods.json", "w") as f:

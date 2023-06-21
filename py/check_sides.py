@@ -6,7 +6,7 @@ def main():
 	with open("../mods.csv") as f:
 		reader = csv.DictReader(f)
 		for row in reader:
-			if row["modrinth_url"]:
+			if row["modrinth_url"] and row["modrinth_url"] != "none":
 				slug = row["modrinth_url"].split("/")[-1]
 				project_data = modrinth_api(f"/project/{slug}")
 				try:
