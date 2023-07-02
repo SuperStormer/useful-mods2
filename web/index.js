@@ -1,5 +1,10 @@
 (async function () {
-	let mods = await (await fetch("mods.json")).json();
+	let mods = await (
+		await fetch("mods.json", {
+			credentials: "include",
+			mode: "no-cors",
+		})
+	).json();
 	let SIDES_MAP = {
 		all: ["Client", "Server", "Either", "Server Optional", "Client Optional", "Both"],
 		clientonly: ["Client", "Either", "Server Optional"],
