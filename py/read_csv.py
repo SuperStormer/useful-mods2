@@ -11,6 +11,10 @@ CF_REMOVED = ["Sodium", "Iris Shaders", "Mod Menu", "More Culling", "Lithium", "
 def get_cf_versions(row):
 	"""fetches version data from CF API"""
 	slug = row["cf_url"].split("/")[-1]
+	if slug == "":
+		warn(f"Remove the trailing slash at the end of the CF url for {row['name']!r}")
+		return None
+	
 	search_data = cf_api(
 		"/v1/mods/search", params={
 		"gameId": GAME_ID,
@@ -30,7 +34,7 @@ def get_cf_versions(row):
 			for file in mod_data["latestFilesIndexes"]
 			)
 		)
-	return versions
+		return versions
 
 def warn(s, *args, **kwargs):
 	print(f"\033[33;1m{s}\033[0m", *args, **kwargs)
@@ -38,6 +42,10 @@ def warn(s, *args, **kwargs):
 def get_modrinth_versions(row):
 	"""fetches version data from Modrinth API"""
 	slug = row["modrinth_url"].split("/")[-1]
+	if slug == "":
+		warn(f"Remove the trailing slash at the end of the Modrinth url for {row['name']!r}")
+		return None
+	
 	version_data = modrinth_api(f"/project/{slug}/version")
 	versions = list(
 		set(
@@ -67,33 +75,25 @@ def main():
 			if row["manual_versions"]:
 				try:
 					versions = json.loads(row["manual_versions"])
-					url = row["github_url"]
 				except ValueError:
 					warn(
 						f"{row['name']!r} has invalid manual_versions data: {row['manual_versions']!r}"
 					)
 					versions = []
-					url = ""
 			elif row["cf_url"] and row["name"] not in CF_REMOVED:
 				versions = get_cf_versions(row)
-				url = row["cf_url"]
 				if versions is None:
 					if row["modrinth_url"]:
 						versions = get_modrinth_versions(row)
-						url = row["modrinth_url"]
 					else:
 						warn(f"{row['name']!r} has no CF or Modrinth data")
 						versions = []
-						url = ""
 			elif row["modrinth_url"]:
 				versions = get_modrinth_versions(row)
-				url = row["modrinth_url"]
 			else:
 				warn(f"{row['name']!r} has no CF or Modrinth url")
 				versions = []
-				url = ""
 			row["versions"] = versions
-			row["url"] = url
 			
 			row["type"] = row["type"].split(",")
 			row["status"] = 0 if not row["status"] else int(row["status"])

@@ -135,7 +135,7 @@ Erroring Entity Remover,https://www.curseforge.com/minecraft/mc-mods/erroring-en
 Erroring Entity Remover Reforged,https://www.curseforge.com/minecraft/mc-mods/erroring-entity-remover-reforged,https://modrinth.com/mod/eer-reforged,,,,Removes entities that throw errors and crash the game while ticking.,Server,should only be used as a last resort,bugfix,2
 FabricCrossDimTPFix,,https://modrinth.com/mod/fabriccrossdimtpfix,,,,Fixes a bug where the player doesn't get sent their XP and Potion effects on cross dim teleport.,Server,,bugfix,
 FastOpenLinksAndFolders,https://www.curseforge.com/minecraft/mc-mods/fastopenlinksandfolders,https://modrinth.com/mod/fastopenlinksandfolders,,,,Stops the game from freezing when opening external links or folders,Client,,bugfix,
-Feature NBT Deadlock Begone,https://www.curseforge.com/minecraft/mc-mods/feature-nbt-deadlock-be-gone,https://modrinth.com/mod/feature-nbt-deadlock-be-gone/,,,,Fixes deadlocks caused by MC-246262.,Server,,bugfix,
+Feature NBT Deadlock Begone,https://www.curseforge.com/minecraft/mc-mods/feature-nbt-deadlock-be-gone,https://modrinth.com/mod/feature-nbt-deadlock-be-gone,,,,Fixes deadlocks caused by MC-246262.,Server,,bugfix,
 fixRTM,https://www.curseforge.com/minecraft/mc-mods/fixrtm,,,,,fixes some RealTrainMod bugs and makes it more useful.,Both,,bugfix,
 FlickerFix,https://www.curseforge.com/minecraft/mc-mods/flickerfix,,,,,"By default, when the night vision effect goes below 10 seconds, the screen starts flickering. This mod replaces that behavior with a fast fade-out at 1 second remaining duration.",Client,,bugfix,
 Head Name Fix,https://www.curseforge.com/minecraft/mc-mods/head-name-fix,https://modrinth.com/mod/headfix,,,,Mob heads will keep their custom names when placed.,Server,,bugfix,

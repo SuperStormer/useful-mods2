@@ -1,10 +1,19 @@
 (async function () {
 	let mods = await (await fetch("mods.json")).json();
-	let sides_map = {
+	let SIDES_MAP = {
 		all: ["Client", "Server", "Either", "Server Optional", "Client Optional", "Both"],
 		clientonly: ["Client", "Either", "Server Optional"],
 		serveronly: ["Server", "Either", "Client Optional"],
 	};
+	const CF_REMOVED = [
+		"Sodium",
+		"Iris Shaders",
+		"Mod Menu",
+		"More Culling",
+		"Lithium",
+		"MemoryLeakFix",
+	];
+
 	let modloader_dropdown = document.getElementById("modloader");
 	let version_dropdown = document.getElementById("version");
 	let type_dropdown = document.getElementById("type");
@@ -19,6 +28,14 @@
 	];
 	let results_body = document.getElementById("results-body");
 	let version_search = document.getElementById("advanced-version");
+	let settings_container = document.getElementById("settings-container");
+	let settings_checkboxes = settings_container.querySelectorAll("input[type=checkbox]");
+	let settings_button = document.getElementById("settings-button");
+	let settings = JSON.parse(localStorage.getItem("settings")) ?? {
+		modrinth_url: false,
+		legacy_cf_url: false,
+	};
+
 	function update_params(modloader, version, type, side, status) {
 		history.pushState(
 			{},
@@ -26,6 +43,7 @@
 			"?" + new URLSearchParams({ modloader, version, type, side, status })
 		);
 	}
+
 	function update_table(modloader, version, type, sides, status) {
 		results_body.innerHTML = "";
 
@@ -40,15 +58,35 @@
 			.sort((a, b) => a.name.localeCompare(b.name));
 
 		for (let result of results) {
+			if (settings["legacy_cf_url"]) {
+				let cf_url = new URL(result["cf_url"]);
+				cf_url.hostname = "legacy.curseforge.com";
+				result["cf_url"] = cf_url.toString();
+			}
+
 			let row = document.createElement("tr");
 
 			let name_cell = document.createElement("td");
 			let name_container = document.createElement("div");
 			name_container.className = "name-container";
+
 			let name_link = document.createElement("a");
 			name_link.textContent = result["name"];
-			name_link.href = result["url"];
+			let url;
+			if (settings["modrinth_url"]) {
+				url = result["modrinth_url"] || result["cf_url"] || result["github_url"];
+			} else if (result["cf_url"] && !CF_REMOVED.includes(result["name"])) {
+				url = result["cf_url"];
+			} else {
+				url = result["modrinth_url"] || result["github_url"];
+			}
+			if (!url) {
+				console.warn(`${result["name"]} has no URL`);
+				console.log(result["cf_url"]);
+			}
+			name_link.href = url;
 			name_container.append(name_link);
+
 			if (result["cf_url"]) {
 				let link = document.createElement("a");
 				link.href = result["cf_url"];
@@ -57,6 +95,7 @@
 				link.append(img);
 				name_container.append(link);
 			}
+
 			if (result["modrinth_url"]) {
 				let link = document.createElement("a");
 				link.href = result["modrinth_url"];
@@ -108,7 +147,7 @@
 
 	function on_dropdown_change(event) {
 		let [modloader, version, type, side, status] = get_dropdown_values();
-		let sides = sides_map[side];
+		let sides = SIDES_MAP[side];
 		status = parseInt(status, 10);
 
 		if (event.target !== version_dropdown) {
@@ -131,7 +170,7 @@
 
 		set_dropdown_values(modloader, version, type, side, status);
 
-		let sides = sides_map[side] || side;
+		let sides = SIDES_MAP[side] || side;
 		update_table(modloader, version, type, sides, status);
 
 		for (let dropdown of dropdowns) {
@@ -140,7 +179,7 @@
 
 		version_search.addEventListener("change", function () {
 			let [modloader, version, type, side, status] = get_dropdown_values();
-			let sides = sides_map[side];
+			let sides = SIDES_MAP[side];
 
 			version = version_search.value;
 			version_dropdown.value = version;
@@ -148,6 +187,18 @@
 			update_table(modloader, version, type, sides, status);
 			update_params(modloader, version, type, side, status);
 		});
+
+		settings_button.addEventListener("click", function () {
+			settings_container.classList.toggle("settings-visible");
+		});
+
+		for (let checkbox of settings_checkboxes) {
+			checkbox.checked = settings[checkbox.name];
+			checkbox.addEventListener("change", function (event) {
+				settings[event.target.name] = event.target.checked;
+				localStorage.setItem("settings", JSON.stringify(settings));
+			});
+		}
 	}
 	main();
 })();

@@ -7,6 +7,7 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
 		<link rel="stylesheet" type="text/css" href="index.css" />
+		<link rel="preload" as="fetch" href="mods.json" />
 		<script src="index.js" defer></script>
 	</head>
 	<body>
@@ -43,6 +44,17 @@
 			<div id="advanced">
 				<label>
 					Advanced version search: <input id="advanced-version" placeholder="1.13.2" />
+				</label>
+				<button id="settings-button">Settings</button>
+			</div>
+			<div id="settings-container">
+				<label id="modrinth-checkbox-label" class="checkbox-label">
+					<input id="modrinth-checkbox" type="checkbox" name="modrinth_url" />Use Modrinth
+					URL in title links
+				</label>
+				<label id="legacy-cf-checkbox-label" class="checkbox-label">
+					<input id="legacy-cf-checkbox" type="checkbox" name="legacy_cf_url" />Use legacy
+					site URL in Curseforge links
 				</label>
 			</div>
 			<table id="results">

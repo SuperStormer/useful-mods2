@@ -45,6 +45,22 @@ th {
 	padding-left: 3px;
 }
 
+#settings-container {
+	display: none;
+}
+
+#settings-container.settings-visible {
+	display: block;
+}
+
+.checkbox-label {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 5px;
+	margin-top: 2px;
+}
+
 /* dark mode */
 @media (prefers-color-scheme: dark) {
 	:root {
