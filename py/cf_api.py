@@ -5,7 +5,7 @@ import requests
 API_KEY = "$2a$10$3kFa9lBWciEK.lsp7NyCSupZ3XmlAYixZQ9fTczqsz1/.W9QDnLUy"
 GAME_ID = 432
 CLASS_ID = 6
-MODLOADERS = {0: "Any", 1: "Forge", 4: "Fabric", 5: "Quilt"}
+MODLOADERS = {0: "Any", 1: "Forge", 4: "Fabric", 5: "Quilt", 6: "NeoForge"}
 
 def cf_api(endpoint: str, params=None, **kwargs):
 	kwargs = {
