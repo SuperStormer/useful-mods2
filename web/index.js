@@ -110,16 +110,20 @@
 				name_container.append(link);
 			}
 
-			// 1 = replaced by other mods, 2 = not recommended, 3 = use with caution
-			if (result["status"] === 1 || result["status"] === 2) {
-				let img = document.createElement("img");
-				img.title = result["status"] === 1 ? "Replaced by other mods" : "Not recommended";
-				img.src = "images/error.svg";
-				name_container.append(img);
-			} else if (result["status"] === 3) {
+			// 1 = replaced by other mods, 2 = strongly not recommended, 3 = not recommended, 4 = use with caution
+			if (result["status"] === 4) {
 				let img = document.createElement("img");
 				img.title = "Use with caution";
 				img.src = "images/warning.svg";
+				name_container.append(img);
+			} else if (result["status"] > 0) {
+				let img = document.createElement("img");
+				img.title = {
+					1: "Replaced by other mods",
+					2: "Strongly not recommended",
+					3: "Not recommended",
+				}[result["status"]];
+				img.src = "images/error.svg";
 				name_container.append(img);
 			}
 
@@ -171,7 +175,7 @@
 		let version = params.get("version") || "1.20.1";
 		let type = params.get("type") || "performance";
 		let side = params.get("side") || "all";
-		let status = parseInt(params.get("status") || 3, 10);
+		let status = parseInt(params.get("status") || 4, 10);
 
 		set_dropdown_values(modloader, version, type, side, status);
 
