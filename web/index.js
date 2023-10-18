@@ -63,7 +63,7 @@
 			.sort((a, b) => a.name.localeCompare(b.name));
 
 		for (let result of results) {
-			if (settings["legacy_cf_url"]) {
+			if (settings["legacy_cf_url"] && result["cf_url"]) {
 				let cf_url = new URL(result["cf_url"]);
 				cf_url.hostname = "legacy.curseforge.com";
 				result["cf_url"] = cf_url.toString();
