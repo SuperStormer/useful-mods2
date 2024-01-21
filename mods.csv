@@ -78,7 +78,7 @@ Magnesium,https://www.curseforge.com/minecraft/mc-mods/sodium-reforged,,,,"Optif
 Entity Distance,,https://modrinth.com/mod/entity-distance,,,,Allows the user to adjust the (client) distance at which different entities render,Client,,performance,
 Hydrogen,,https://modrinth.com/mod/hydrogen,,,,Reduces the memory usage of the game in more modded scenarios,Either,Consider using FerriteCore instead,performance,3
 Resolution Control+,https://www.curseforge.com/minecraft/mc-mods/resolutioncontrol,https://modrinth.com/mod/resolution-control-plus,,,,Allows you to change Minecraft's render resolution separately from the HUD elements.,Client,,performance,
-Fat Experience Orbs,https://www.curseforge.com/minecraft/mc-mods/fat-experience-orbs,https://modrinth.com/mod/fat-experience-orbs,,,,Makes nearby experience orbs merge together,Server,,performance,
+Fat Experience Orbs,none,https://modrinth.com/mod/fat-experience-orbs,,,,Makes nearby experience orbs merge together,Server,,performance,
 Angerable Patch,https://www.curseforge.com/minecraft/mc-mods/angerable-patch,,,,,"Fixes MC-192362 / MC-189565, which causes drastically large log file sizes and lag",Client,,performance,
 Overworld Two,https://www.curseforge.com/minecraft/mc-mods/overworld-two,,,,,Generates overworld and nether terrain much faster than vanilla minecraft at the cost of breaking parity,Server,breaks Vanilla seed parity,performance,3
 APTweaks,https://www.curseforge.com/minecraft/mc-mods/adaptive-performance-tweaks,,,,Dynamic View,Automatically adjusts specific settings on the server and client side to allow a balanced TPS/FPS.,Server,likely causes more lag and may hide TPS issues,performance,2
@@ -238,7 +238,7 @@ Rubidium Extra,https://www.curseforge.com/minecraft/mc-mods/rubidium-extra,https
 TabTPS,,https://modrinth.com/plugin/tabtps,,,,"shows TPS, MSPT, etc in the tab menu, boss bar, and action bar; adds commands for checking current TPS, memory and ping",Server,,utility,
 Mod Menu,https://www.curseforge.com/minecraft/mc-mods/modmenu,https://modrinth.com/mod/modmenu,,,,adds a list of mods accessed via a menu button,Client,no longer available on Curseforge,utility,
 Chunk Sending,https://www.curseforge.com/minecraft/mc-mods/chunk-sending-forge-fabric,,,,,Optimizes chunk packet sending through sorting and distributing them over time.,Server,closed source,performance,
-Structure Essentials,https://www.curseforge.com/minecraft/mc-mods/structure-essentials-forge-fabric,,,,,makes structure locating much faster (eg. looting a chest with a treasure map),Server,closed source,performance,
+Structure Essentials,https://www.curseforge.com/minecraft/mc-mods/structure-essentials-forge-fabric,,,,,makes structure locating much faster (eg. looting a chest with a treasure map) and adds some utility commands,Server,closed source,performance,
 DoesPotatoTick,https://www.curseforge.com/minecraft/mc-mods/doespotatotick,,,,,Limits entity ticking outside view distance,Both,breaks vanilla mob farms,performance,3
 DrawerFPS Legacy,https://www.curseforge.com/minecraft/mc-mods/drawerfps-legacy,,,,,Lets you configure the range at which Storage Drawers render items to improve fps.,Client,,performance,
 Methane,,https://modrinth.com/mod/methane,,,,disable lighting and optionally fog,Client,"basically fullbright, but with performance gains",performance,3
@@ -253,7 +253,7 @@ AntiShulkerDupe,,https://modrinth.com/mod/antishulkerdupe,,,,Patches the 1.17-1.
 Chunk Saving Fix,https://www.curseforge.com/minecraft/mc-mods/chunk-saving-fix,,,,,Fixes MC-224729 which causes worldgen happening far away from the player to be cut off,Server,,bugfix,
 Chocolate Fix,https://www.curseforge.com/minecraft/mc-mods/chocolate-fix,,,,,Fixes a few worldgen bugs,Server,Some fixes are in later version of Forge,bugfix,
 Crash Utilities,https://www.curseforge.com/minecraft/mc-mods/crash-utilities,,,,,adds a number of tools for finding and fixing common server problems.,Client Optional,,bugfix,
-Legacy VanillaFix,,https://modrinth.com/mod/legacyvanillafix,,,,Unofficial Legacy Fabric port of Vanilla Fix,Client,,"performance,bugfix,utility",
+Legacy VanillaFix,,https://modrinth.com/mod/legacyvanillafix,,,,Unofficial Legacy Fabric port of Vanilla Fix,Either,,"performance,bugfix,utility",
 MixinTrace,https://www.curseforge.com/minecraft/mc-mods/mixintrace,https://modrinth.com/mod/mixintrace,,,,adds a list of mixins to classes in the stack trace of crash reports,Server,,utility,
 Modern Keybinding (Forge),https://www.curseforge.com/minecraft/mc-mods/modern-keybinding,https://modrinth.com/mod/modernkeybinding,,,,Backports key modifiers,Client,,utility,
 Modern Keybinding (Fabric),https://www.curseforge.com/minecraft/mc-mods/modern-keybinding-fabric,https://modrinth.com/mod/modernkeybinding,,,,Ports key modifiers to Fabric,Client,,utility,
@@ -344,7 +344,7 @@ Better Beds Reforged,,https://modrinth.com/mod/better-beds-reforged,,,,Removes t
 SmoothMenu Refabricated,none,https://modrinth.com/mod/smoothmenu-refabricated,,,,"Uncaps the 60 FPS limit in the main menu, increasing responsivity on high refresh monitors.",Client,may only be effective if you have a high refresh monitor,performance,
 SmoothMenu,https://www.curseforge.com/minecraft/mc-mods/smoothmenu,none,,,,"Uncaps the 60 FPS limit in the main menu, increasing responsivity on high refresh monitors.",Client,may only be effective if you have a high refresh monitor,performance,
 Axolotl Bucket Fix (Forge),https://www.curseforge.com/minecraft/mc-mods/axolotl-bucket-fix-forge,https://modrinth.com/mod/axolotl-bucket-fix-forge,,,,fixes axolotl buckets so that the item texture shows you what's actually inside it.,Client,,bugfix,
-Cyanide (Forge),https://www.curseforge.com/minecraft/mc-mods/cyanide-forge,https://modrinth.com/mod/cyanide,,,,Improves datapack error logging,Server,,utility,
+Cyanide (Forge),https://www.curseforge.com/minecraft/mc-mods/cyanide,https://modrinth.com/mod/cyanide,,,,Improves datapack error logging,Server,,utility,
 Level Text Fix,https://www.curseforge.com/minecraft/mc-mods/level-text-fix,https://modrinth.com/mod/level-text-fix,,,,"Fix missing localization entries for enchantment and potion levels greater than 10, and add config option to switch them to Arabic numerals.",Both,,bugfix,
 SkinPort,https://www.curseforge.com/minecraft/mc-mods/skinport,,,,,Adds rendering support for the new 1.8 skin format.,Both,,utility,
 Netty-Patcher,,,https://github.com/draknyte1/Netty-Patcher,"[[""1.7.10"", ""Forge""]]",,Fixes MC-108343,Client,,bugfix,
@@ -355,7 +355,7 @@ FastFurnace Minus Replacement,https://www.curseforge.com/minecraft/mc-mods/fastf
 FastWorkbench Minus Replacement,https://www.curseforge.com/minecraft/mc-mods/fastworkbench-minus-replacement,,,,,Rewrite of FastWorkbench using mixins,Server,unneeded now because the original mod has been rewritten using mixins,performance,1
 Async Locator,https://www.curseforge.com/minecraft/mc-mods/async-locator,https://modrinth.com/mod/async-locator,,,,"Modifies vanilla behaviour when locating features (eg. /locate command, exploration maps, etc) to run asynchronously, mitigating associated lag.",Server,,performance,
 Load My F***ing Tags,https://www.curseforge.com/minecraft/mc-mods/lmft,https://modrinth.com/mod/lmft,,,,Prevents incorrect tag entries from breaking an entire tag,Both,,bugfix,
-Entity View Distance,https://www.curseforge.com/minecraft/mc-mods/entity-view-distance,https://modrinth.com/mod/entity-distance,,,,allows you to modify the distance in which entities become visible,Either,already included in Sodium/Rubidium,performance,
+Entity View Distance,https://www.curseforge.com/minecraft/mc-mods/entity-view-distance,https://modrinth.com/mod/entity-view-distance/,,,,allows you to modify the distance in which entities become visible,Either,already included in Sodium/Rubidium,performance,
 Thaumic Speedup,https://www.curseforge.com/minecraft/mc-mods/thaumic-speedup,,,,,Offloads some Thaumcraft stuff to another thread,Both,,performance,
 IC2 Patcher,https://www.curseforge.com/minecraft/mc-mods/ic2-patcher,,,,,Fixes several issues in IndustrialCraft 2,Both,,performance,
 Console Filter,https://www.curseforge.com/minecraft/mc-mods/console-filter,,,,,Allows you to remove annoying logs.,Either,configuration needed,utility,
@@ -371,7 +371,7 @@ Better chunk loading,https://www.curseforge.com/minecraft/mc-mods/better-chunk-l
 Client Crafting,https://www.curseforge.com/minecraft/mc-mods/client-crafting,,,,,Improves crafting UI responsiveness by no longer waiting for server reply,Client,closed source,performance,
 Mixin In Heaven,https://www.curseforge.com/minecraft/mc-mods/mixin-in-heaven,,,,,Unofficial Forge port of MixinTrace. adds a list of mixins to classes in the stack trace of crash reports,Server,,utility,
 Opotato,https://www.curseforge.com/minecraft/mc-mods/opotato,,,,,"Backports Alternate Current, Smooth Menu, MixinTrace and DEUF, and adds config options/bugfixes for a variety of other mods.",Both,"unknown effectiveness, more info needed","performance,bugfix",3
-Redirectionor,https://www.curseforge.com/minecraft/mc-mods/redirectionor,,,,,Reduces memory usage by replacing references to element values in enum classes with public static final field values references.,Client Optional,,performance,3
+Redirectionor (Modern),https://www.curseforge.com/minecraft/mc-mods/redirectionor,,,,,Reduces memory usage by replacing references to element values in enum classes with public static final field values references.,Client Optional,,performance,4
 Neruina,https://www.curseforge.com/minecraft/mc-mods/neruina,https://modrinth.com/mod/neruina,,,,Prevents ticking crashes from bricking worlds,Server,should only be used as a last resort,bugfix,3
 ForgetMeChunk (Forge),https://www.curseforge.com/minecraft/mc-mods/forgetmechunk-forge,none,,,,Fixes the large lag spikes you sometimes get when crossing a chunk border,Client,causes a memory leak that is only reset by changing dimension or leaving the world,performance,3
 Embeddium,https://www.curseforge.com/minecraft/mc-mods/embeddium,,,,"Magnesium, Optifine","Unofficial Forge port of Sodium with additional Forge-specific bugfixes. FOSS rendering engine replacement that greatly improves frame rates, reduces micro-stutter, and fixes graphical issues.",Client,incompatibilities with some mods,performance,4
@@ -379,3 +379,9 @@ Alfheim Lighting Engine,https://www.curseforge.com/minecraft/mc-mods/alfheim-lig
 Enhanced Block Entities,none,https://modrinth.com/mod/ebe-backforged,,,,"Aims to increase the performance of block entity rendering, as well as offer customizability via resource packs.",Client,requires Indium to be installed for compatibility with Sodium,performance,
 Packet Fixer,https://www.curseforge.com/minecraft/mc-mods/packet-fixer,https://modrinth.com/mod/packet-fixer,,,,fixes various packets/NBTs errors,Both,,bugfix,
 Not Enough Recipe Book,https://www.curseforge.com/minecraft/mc-mods/notenoughrecipebook,https://modrinth.com/mod/nerb,,,,"Completely removes recipe book from the game, improving player data reading speeds",Both,,performance,
+Redirectionor (Retro),https://www.curseforge.com/minecraft/mc-mods/redirectionor-retro,,,,,Reduces memory usage by replacing references to element values in enum classes with public static final field values references.,Client Optional,,performance,4
+ID Conflicts Viewer,https://www.curseforge.com/minecraft/mc-mods/idcv,https://modrinth.com/mod/idcv,,,,Helps resolve ID conflicts by logging all ids and what they are occupied by.,Either,,utility,
+Entity Culling Unofficial,https://www.curseforge.com/minecraft/mc-mods/entityculling-unofficial,https://modrinth.com/mod/entitycullingunofficial,,,,Unofficial backport of Entity Culling to 1.7.10,Client,,performance,
+Angelica,,,https://github.com/GTNewHorizons/Angelica,"[[""1.7.10"", ""Forge""]]","Optifine, Fastcraft, Neodymium",OptiFine replacement for 1.7.10,Client,alpha,"performance,utility",4
+Fast Async World Save,https://www.curseforge.com/minecraft/mc-mods/fast-async-world-save-forge-fabric,,,,,Makes data saved asynchronously during the intermittent world save every 5 minutes to prevent lag spikes.,Server,closed source,performance,
+Recipe Essentials,https://www.curseforge.com/minecraft/mc-mods/recipe-essentials-forge-fabric,,,,,"Caches recipe lookups to prevent lag from autocrafting machines, etc and reduces size of the recipe packet to avoid size issues",Either,closed source,performance,
