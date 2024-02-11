@@ -78,7 +78,6 @@ Magnesium,https://www.curseforge.com/minecraft/mc-mods/sodium-reforged,,,,"Optif
 Entity Distance,,https://modrinth.com/mod/entity-distance,,,,Allows the user to adjust the (client) distance at which different entities render,Client,,performance,
 Hydrogen,,https://modrinth.com/mod/hydrogen,,,,Reduces the memory usage of the game in more modded scenarios,Either,Consider using FerriteCore instead,performance,3
 Resolution Control+,https://www.curseforge.com/minecraft/mc-mods/resolutioncontrol,https://modrinth.com/mod/resolution-control-plus,,,,Allows you to change Minecraft's render resolution separately from the HUD elements.,Client,,performance,
-Fat Experience Orbs,none,https://modrinth.com/mod/fat-experience-orbs,,,,Makes nearby experience orbs merge together,Server,,performance,
 Angerable Patch,https://www.curseforge.com/minecraft/mc-mods/angerable-patch,,,,,"Fixes MC-192362 / MC-189565, which causes drastically large log file sizes and lag",Client,,performance,
 Overworld Two,https://www.curseforge.com/minecraft/mc-mods/overworld-two,,,,,Generates overworld and nether terrain much faster than vanilla minecraft at the cost of breaking parity,Server,breaks Vanilla seed parity,performance,3
 APTweaks,https://www.curseforge.com/minecraft/mc-mods/adaptive-performance-tweaks,,,,Dynamic View,Automatically adjusts specific settings on the server and client side to allow a balanced TPS/FPS.,Server,likely causes more lag and may hide TPS issues,performance,2
