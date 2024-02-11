@@ -8,6 +8,9 @@ from modrinth_api import modrinth_api, MODLOADERS as MODRINTH_MODLOADERS
 # so that we can fetch version data from Modrinth instead
 CF_REMOVED = ["Sodium", "Iris Shaders", "Mod Menu", "More Culling", "Lithium", "MemoryLeakFix"]
 
+def warn(s, *args, **kwargs):
+	print(f"\033[33;1m{s}\033[0m", *args, **kwargs)
+
 def get_cf_versions(row):
 	"""fetches version data from CF API"""
 	slug = row["cf_url"].split("/")[-1]
@@ -36,17 +39,17 @@ def get_cf_versions(row):
 		)
 		return versions
 
-def warn(s, *args, **kwargs):
-	print(f"\033[33;1m{s}\033[0m", *args, **kwargs)
-
 def get_modrinth_versions(row):
 	"""fetches version data from Modrinth API"""
 	slug = row["modrinth_url"].split("/")[-1]
 	if slug == "":
 		warn(f"Remove the trailing slash at the end of the Modrinth url for {row['name']!r}")
 		return None
-	
-	version_data = modrinth_api(f"/project/{slug}/version")
+	try:
+		version_data = modrinth_api(f"/project/{slug}/version")
+	except json.JSONDecodeError:
+		warn(f"{row['name']!r} has no Modrinth data")
+		return None
 	versions = list(
 		set(
 		(mc_version, loader.title()) for mod_version in version_data
