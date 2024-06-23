@@ -381,6 +381,8 @@ Not Enough Recipe Book,https://www.curseforge.com/minecraft/mc-mods/notenoughrec
 Redirectionor (Retro),https://www.curseforge.com/minecraft/mc-mods/redirectionor-retro,,,,,Reduces memory usage by replacing references to element values in enum classes with public static final field values references.,Client Optional,,performance,4
 ID Conflicts Viewer,https://www.curseforge.com/minecraft/mc-mods/idcv,https://modrinth.com/mod/idcv,,,,Helps resolve ID conflicts by logging all ids and what they are occupied by.,Either,,utility,
 Entity Culling Unofficial,https://www.curseforge.com/minecraft/mc-mods/entityculling-unofficial,https://modrinth.com/mod/entitycullingunofficial,,,,Unofficial backport of Entity Culling to 1.7.10,Client,,performance,
-Angelica,,,https://github.com/GTNewHorizons/Angelica,"[[""1.7.10"", ""Forge""]]","Optifine, Fastcraft, Neodymium",OptiFine replacement for 1.7.10,Client,alpha,"performance,utility",4
+Angelica,,,https://github.com/GTNewHorizons/Angelica,"[[""1.7.10"", ""Forge""]]","OptiFine, NotFine, Fastcraft, BetterFPS, Neodymium",OptiFine replacement for 1.7.10,Client,alpha,"performance,utility",4
 Fast Async World Save,https://www.curseforge.com/minecraft/mc-mods/fast-async-world-save-forge-fabric,,,,,Makes data saved asynchronously during the intermittent world save every 5 minutes to prevent lag spikes.,Server,closed source,performance,
 Recipe Essentials,https://www.curseforge.com/minecraft/mc-mods/recipe-essentials-forge-fabric,,,,,"Caches recipe lookups to prevent lag from autocrafting machines, etc and reduces size of the recipe packet to avoid size issues",Either,closed source,performance,
+Phosphor Legacy Forge,,https://modrinth.com/mod/phosphorlegacyforge,,,,Unofficial backport of Phosphor to Forge 1.7.10,Client,,performance,
+Phosphor Legacy,,https://modrinth.com/mod/phosphor-legacy,,,,Unofficial backport of Phosphor to Legacy Fabric 1.12.2 & 1.8.9,Client,,performance,
