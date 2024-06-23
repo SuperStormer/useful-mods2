@@ -171,8 +171,8 @@
 
 	function main() {
 		let params = new URLSearchParams(window.location.search);
-		let modloader = params.get("modloader") || "Forge";
-		let version = params.get("version") || "1.20.1";
+		let modloader = params.get("modloader") || "NeoForge";
+		let version = params.get("version") || "1.21";
 		let type = params.get("type") || "performance";
 		let side = params.get("side") || "all";
 		let status = parseInt(params.get("status") || 4, 10);
@@ -196,6 +196,10 @@
 			update_table(modloader, version, type, sides, status);
 			update_params(modloader, version, type, side, status);
 		});
+
+		if (![...version_dropdown.options].some((option) => option.value === version)) {
+			version_search.value = version;
+		}
 
 		settings_button.addEventListener("click", function () {
 			settings_container.classList.toggle("settings-visible");
