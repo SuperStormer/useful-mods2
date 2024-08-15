@@ -1,0 +1,94 @@
+body,
+input,
+select,
+button {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+	padding: 15px;
+}
+
+#content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 15px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table {
+	border-radius: 5px;
+}
+
+table,
+th {
+	border: 1px solid black;
+}
+
+td {
+	border: 1px solid #b6b6b6;
+}
+
+td,
+th {
+	padding: 5px;
+}
+
+.name-container img {
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	padding-left: 3px;
+}
+
+#settings-container {
+	display: none;
+}
+
+#settings-container.settings-visible {
+	display: block;
+}
+
+.checkbox-label {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 5px;
+	margin-top: 2px;
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+	}
+
+	table,
+	th {
+		border-color: rgb(160, 160, 160);
+	}
+	td {
+		border-color: rgb(79, 87, 91);
+	}
+
+	body {
+		background-color: #222426;
+		color: rgb(250, 250, 250);
+	}
+	input,
+	select {
+		border-color: #736b5e;
+		background-color: #24282a;
+		color: rgb(250, 250, 250);
+	}
+	a {
+		color: #3391ff;
+	}
+	a:visited {
+		color: rgb(131, 46, 205);
+	}
+}

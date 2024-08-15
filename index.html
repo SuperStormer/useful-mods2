@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Useful Mods</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="index.css" />
+		<link rel="preload" as="fetch" href="mods.json" />
+		<script src="index.js" defer></script>
+	</head>
+	<body>
+		<main id="content">
+			<div id="dropdowns">
+				<select id="version">
+					<option>1.7.10</option>
+					<option>1.12.2</option>
+					<option>1.16.5</option>
+					<option>1.18.2</option>
+					<option>1.19.2</option>
+					<option>1.20.1</option>
+					<option selected>1.21</option>
+				</select>
+				<select id="modloader">
+					<option selected>NeoForge</option>
+					<option>Fabric</option>
+					<option>Forge</option>
+					<option>Quilt</option>
+				</select>
+				<select id="type">
+					<option value="performance" selected>Performance</option>
+					<option value="bugfix">Bug Fix</option>
+					<option value="utility">Utility</option>
+				</select>
+				<select id="side">
+					<option value="all" selected>All</option>
+					<option value="clientonly">Client Only</option>
+					<option value="serveronly">Server Only</option>
+				</select>
+				<select id="status">
+					<option value="5">Mostly Safe</option>
+					<option value="4" selected>Use Caution</option>
+					<option value="3">All</option>
+					<option value="1" hidden>Hazmat</option>
+				</select>
+			</div>
+			<div id="advanced">
+				<label>
+					Advanced version search: <input id="advanced-version" placeholder="1.13.2" />
+				</label>
+				<button id="settings-button">Settings</button>
+			</div>
+			<div id="settings-container">
+				<label id="modrinth-checkbox-label" class="checkbox-label">
+					<input id="modrinth-checkbox" type="checkbox" name="modrinth_url" />Use Modrinth
+					URL in title links
+				</label>
+				<label id="legacy-cf-checkbox-label" class="checkbox-label">
+					<input id="legacy-cf-checkbox" type="checkbox" name="legacy_cf_url" />Use legacy
+					site URL in Curseforge links
+				</label>
+			</div>
+			<table id="results">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Side</th>
+						<th>Incompatibilities</th>
+						<th>Notes</th>
+					</tr>
+				</thead>
+				<tbody id="results-body"></tbody>
+			</table>
+		</main>
+		<noscript>
+			This site requires Javascript to function; please enable it.
+			<style>
+				#content {
+					display: none;
+				}
+			</style>
+		</noscript>
+	</body>
+</html>
